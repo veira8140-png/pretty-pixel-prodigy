@@ -47,17 +47,13 @@ const Home: React.FC = () => {
   return (
     <div className="bg-zinc-50">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center text-center relative overflow-hidden pt-20">
+      <section className="min-h-screen flex flex-col justify-center text-center relative overflow-hidden pt-16">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-[0.03] pointer-events-none">
           <div className="absolute top-20 left-10 w-96 h-96 border border-zinc-900 rounded-full"></div>
           <div className="absolute bottom-20 right-10 w-[500px] h-[500px] border border-zinc-900 rounded-full"></div>
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <div className="mb-8 flex flex-col items-center">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.4em] mb-4">Serving Kenyan Businesses</span>
-            <div className="w-12 h-[1px] bg-zinc-200"></div>
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-zinc-900 leading-[0.95] mb-8">
             Business operations,<br />
             <span className="text-zinc-300">done for you.</span>
