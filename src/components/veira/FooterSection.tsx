@@ -84,9 +84,9 @@ export const FooterSection: React.FC = () => {
         {/* Map Section */}
         <div className="mb-12">
           <h4 className="font-display font-semibold mb-4">Find Us</h4>
-          <div className="rounded-xl overflow-hidden h-48 md:h-64">
+          <div className="rounded-xl overflow-hidden h-48 md:h-64 bg-background/10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176214447727!2d36.8211447!3d-1.2833333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6a3f3f3f3%3A0x1234567890abcdef!2sRuprani%20House%2C%20Moktar%20Daddah%20St%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1705000000000"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ruprani+House,Moktar+Daddah+Street,Nairobi,Kenya"
               width="100%"
               height="100%"
               style={{ border: 0 }}
