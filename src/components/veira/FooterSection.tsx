@@ -74,9 +74,9 @@ export const FooterSection: React.FC = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-background/70">
-              <li>+254 700 000 000</li>
+              <li>+254 755 792 377</li>
               <li>hello@veira.co.ke</li>
-              <li>Nairobi, Kenya</li>
+              <li>Ruprani House, 3rd Floor, Moktar Daddah St, Nairobi</li>
             </ul>
           </div>
         </div>
@@ -86,14 +86,14 @@ export const FooterSection: React.FC = () => {
           <h4 className="font-display font-semibold mb-4">Find Us</h4>
           <div className="rounded-xl overflow-hidden h-48 md:h-64">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176214447727!2d36.82115!3d-1.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22ba7f4d3%3A0x4c7b7f2b3c4d5e6f!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176214447727!2d36.8211447!3d-1.2833333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6a3f3f3f3%3A0x1234567890abcdef!2sRuprani%20House%2C%20Moktar%20Daddah%20St%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1705000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Veira Business Location"
+              title="Veira - Ruprani House, Moktar Daddah St, Nairobi"
             ></iframe>
           </div>
         </div>
