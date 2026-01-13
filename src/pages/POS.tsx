@@ -123,25 +123,25 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
   return (
     <div className="bg-zinc-50">
       {/* Hero */}
-      <section className="pt-32 pb-24 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.4em] mb-4 block">Point of Sale</span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 leading-tight mb-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Point of Sale</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-zinc-900 leading-tight mb-4 sm:mb-6">
             {content.h1}
           </h1>
-          <p className="text-xl text-zinc-500 max-w-2xl mx-auto mb-10">
+          <p className="text-base sm:text-lg lg:text-xl text-zinc-500 max-w-2xl mx-auto mb-8 sm:mb-10 px-4 sm:px-0">
             {content.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
             <a
               href="https://wa.me/254700000000"
-              className="px-10 py-4 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-sm uppercase tracking-widest"
+              className="px-8 sm:px-10 py-3 sm:py-4 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-xs sm:text-sm uppercase tracking-widest"
             >
               Get Free POS
             </a>
             <Link
               to="/pos/pricing"
-              className="px-10 py-4 border border-zinc-200 text-zinc-900 rounded-full font-bold hover:bg-white transition-all text-sm uppercase tracking-widest"
+              className="px-8 sm:px-10 py-3 sm:py-4 border border-zinc-200 text-zinc-900 rounded-full font-bold hover:bg-white transition-all text-xs sm:text-sm uppercase tracking-widest"
             >
               See Pricing
             </Link>
@@ -150,21 +150,21 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.4em] mb-4 block">Features</span>
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Features</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900">
               Everything you need to sell
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {features.map((feature, idx) => (
-              <div key={idx} className="bento-card p-8">
-                <span className="text-3xl mb-4 block">{feature.icon}</span>
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{feature.title}</h3>
-                <p className="text-zinc-500">{feature.description}</p>
+              <div key={idx} className="bento-card p-5 sm:p-6 lg:p-8">
+                <span className="text-2xl sm:text-3xl mb-3 sm:mb-4 block">{feature.icon}</span>
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-1 sm:mb-2">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-zinc-500">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -172,40 +172,40 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-zinc-900 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-20 lg:py-24 bg-zinc-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <div>
-              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.4em] mb-6 block">Pricing</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-4 sm:mb-6 block">Pricing</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6">
                 No upfront cost.
               </h2>
-              <p className="text-xl text-zinc-400 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed mb-6 sm:mb-8">
                 We install the POS for free. You pay only 1.5% success fee when you make sales. Hardware pricing available on request.
               </p>
               <a
                 href="https://wa.me/254700000000"
-                className="inline-block px-8 py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100 transition-all text-sm uppercase tracking-widest"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100 transition-all text-xs sm:text-sm uppercase tracking-widest"
               >
                 Ask About Pricing
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-zinc-800 rounded-3xl p-8">
-                <div className="text-4xl font-bold mb-2">0</div>
-                <div className="text-zinc-400 text-sm">Software cost</div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-zinc-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">0</div>
+                <div className="text-zinc-400 text-xs sm:text-sm">Software cost</div>
               </div>
-              <div className="bg-zinc-800 rounded-3xl p-8">
-                <div className="text-4xl font-bold mb-2">1.5%</div>
-                <div className="text-zinc-400 text-sm">Success fee</div>
+              <div className="bg-zinc-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">1.5%</div>
+                <div className="text-zinc-400 text-xs sm:text-sm">Success fee</div>
               </div>
-              <div className="bg-zinc-800 rounded-3xl p-8">
-                <div className="text-4xl font-bold mb-2">Free</div>
-                <div className="text-zinc-400 text-sm">Installation</div>
+              <div className="bg-zinc-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">Free</div>
+                <div className="text-zinc-400 text-xs sm:text-sm">Installation</div>
               </div>
-              <div className="bg-zinc-800 rounded-3xl p-8">
-                <div className="text-4xl font-bold mb-2">Free</div>
-                <div className="text-zinc-400 text-sm">Training</div>
+              <div className="bg-zinc-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">Free</div>
+                <div className="text-zinc-400 text-xs sm:text-sm">Training</div>
               </div>
             </div>
           </div>
@@ -213,20 +213,20 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
       </section>
 
       {/* FAQs */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.4em] mb-4 block">FAQs</span>
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">FAQs</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900">
               Common questions
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-5 lg:space-y-6">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border-b border-zinc-100 pb-6">
-                <h3 className="text-lg font-bold text-zinc-900 mb-2">{faq.q}</h3>
-                <p className="text-zinc-500">{faq.a}</p>
+              <div key={idx} className="border-b border-zinc-100 pb-4 sm:pb-5 lg:pb-6">
+                <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-1 sm:mb-2">{faq.q}</h3>
+                <p className="text-sm sm:text-base text-zinc-500">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -234,17 +234,17 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-zinc-50 border-t border-zinc-100">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 mb-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-zinc-50 border-t border-zinc-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 mb-4 sm:mb-6">
             Ready to get started?
           </h2>
-          <p className="text-lg text-zinc-500 mb-10">
+          <p className="text-base sm:text-lg text-zinc-500 mb-8 sm:mb-10 px-4 sm:px-0">
             Talk to us on WhatsApp and get your free POS installed within days.
           </p>
           <a
             href="https://wa.me/254700000000"
-            className="inline-block px-10 py-4 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-sm uppercase tracking-widest"
+            className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-xs sm:text-sm uppercase tracking-widest"
           >
             Ask on WhatsApp
           </a>

@@ -36,34 +36,34 @@ const audiences = [
 
 export const WhoWeServeSection: React.FC = () => {
   return (
-    <section id="who-we-serve" className="py-24 bg-muted/30">
+    <section id="who-we-serve" className="py-16 sm:py-20 lg:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Who We Serve</span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
+          <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">Who We Serve</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
             Built for real Kenyan businesses
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4 sm:px-0">
             If you want clear numbers and fewer headaches, Veira fits. We work with businesses of all sizes across Kenya.
           </p>
         </div>
 
         {/* Audience Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {audiences.map((audience) => (
             <div
               key={audience.title}
-              className="group flex items-start gap-4 bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:shadow-md transition-all"
+              className="group flex items-start gap-3 sm:gap-4 bg-card border border-border rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 hover:border-primary/30 hover:shadow-md transition-all"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                <audience.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 sm:w-11 lg:w-12 h-10 sm:h-11 lg:h-12 bg-primary/10 rounded-md sm:rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <audience.icon className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-primary" />
               </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+              <div className="min-w-0">
+                <h3 className="font-display text-base sm:text-lg font-semibold text-foreground mb-0.5 sm:mb-1">
                   {audience.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   {audience.description}
                 </p>
               </div>

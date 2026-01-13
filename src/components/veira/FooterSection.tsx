@@ -12,33 +12,33 @@ export const FooterSection: React.FC = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-foreground text-background py-12 sm:py-14 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-lg">V</span>
+          <div className="sm:col-span-2">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <div className="w-7 sm:w-8 h-7 sm:h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-display font-bold text-base sm:text-lg">V</span>
               </div>
-              <span className="font-display font-semibold text-xl">Veira</span>
+              <span className="font-display font-semibold text-lg sm:text-xl">Veira</span>
             </div>
-            <p className="text-background/70 max-w-md mb-6">
+            <p className="text-background/70 max-w-md mb-4 sm:mb-6 text-sm sm:text-base">
               Business systems that keep your business running. We help Kenyan businesses manage sales, stock, and customers with tools that actually work.
             </p>
-            <p className="text-sm text-background/50">
+            <p className="text-xs sm:text-sm text-background/50">
               You focus on your business. We handle the systems.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection('#services')}
-                  className="text-background/70 hover:text-background transition-colors"
+                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
                 >
                   Services
                 </button>
@@ -46,7 +46,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#how-it-works')}
-                  className="text-background/70 hover:text-background transition-colors"
+                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
                 >
                   How It Works
                 </button>
@@ -54,7 +54,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#who-we-serve')}
-                  className="text-background/70 hover:text-background transition-colors"
+                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
                 >
                   Who We Serve
                 </button>
@@ -62,7 +62,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#why-veira')}
-                  className="text-background/70 hover:text-background transition-colors"
+                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
                 >
                   Why Veira
                 </button>
@@ -72,8 +72,8 @@ export const FooterSection: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Contact</h4>
-            <ul className="space-y-3 text-background/70">
+            <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
+            <ul className="space-y-2 sm:space-y-3 text-background/70 text-sm sm:text-base">
               <li>+254 755 792 377</li>
               <li>hello@veira.co.ke</li>
               <li>Ruprani House, 3rd Floor, Moktar Daddah St, Nairobi</li>
@@ -82,9 +82,9 @@ export const FooterSection: React.FC = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mb-12">
-          <h4 className="font-display font-semibold mb-4">Find Us</h4>
-          <div className="rounded-xl overflow-hidden h-48 md:h-64 bg-background/10">
+        <div className="mb-10 sm:mb-12">
+          <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Find Us</h4>
+          <div className="rounded-lg sm:rounded-xl overflow-hidden h-40 sm:h-48 md:h-64 bg-background/10">
             <iframe
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ruprani+House,Moktar+Daddah+Street,Nairobi,Kenya"
               width="100%"
@@ -99,11 +99,11 @@ export const FooterSection: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-background/50">
+        <div className="pt-6 sm:pt-8 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-xs sm:text-sm text-background/50">
             © {currentYear} Veira. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-background/50">
+          <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-background/50">
             <Link to="/privacy" className="hover:text-background transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-background transition-colors">Terms of Service</Link>
           </div>
