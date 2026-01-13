@@ -239,11 +239,10 @@ const EditEvent = () => {
     try {
       let imageUrl = imagePreview;
 
-      // Upload new image if changed
+      // Upload new image if changed with user-scoped path for RLS policies
       if (imageFile) {
         const fileExt = imageFile.name.split('.').pop();
-        const fileName = `${Math.random()}.${fileExt}`;
-        const filePath = `${fileName}`;
+        const filePath = `${user.id}/${id}-${Date.now()}.${fileExt}`;
 
         const { error: uploadError } = await supabase.storage
           .from('event-images')

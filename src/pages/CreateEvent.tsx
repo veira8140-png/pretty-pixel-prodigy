@@ -146,10 +146,9 @@ const CreateEvent = () => {
     setIsSubmitting(true);
 
     try {
-      // Upload image to storage
+      // Upload image to storage with user-scoped path for RLS policies
       const fileExt = imageFile.name.split('.').pop();
-      const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `${fileName}`;
+      const filePath = `${user.id}/${Date.now()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
         .from('event-images')
