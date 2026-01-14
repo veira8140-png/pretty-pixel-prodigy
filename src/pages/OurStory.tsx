@@ -1,150 +1,111 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '@/components/SEOHead';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 const OurStory: React.FC = () => {
-  useEffect(() => {
-    document.title = 'Our Story | Veira';
-  }, []);
+  const faqs = [
+    { question: "Where is Veira located?", answer: "Veira is based in Nairobi, Kenya at Ruprani House, 3rd Floor, Moktar Daddah St." },
+    { question: "Does Veira support GBV causes?", answer: "Yes, we allocate 10% of our annual profits to organizations that fight gender-based violence and support survivors." },
+  ];
 
   return (
-    <div className="bg-zinc-950 text-white min-h-screen">
+    <div className="bg-purple-950 text-white min-h-screen">
+      <SEOHead 
+        title="About Veira Kenya | Our Story & Mission"
+        description="Learn about Veira's mission to simplify business operations for Kenyan SMEs. We allocate 10% of profits to fight GBV and support survivors."
+        faqs={faqs}
+      />
+
       {/* Hero */}
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+      <section className="pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <span className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-6 sm:mb-8 block">Our Story</span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight mb-10 sm:mb-12 lg:mb-16">
+          <Breadcrumbs className="justify-start mb-6 sm:mb-8 text-purple-300" />
+          <span className="text-[9px] sm:text-[10px] font-bold text-purple-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-4 sm:mb-6 block">Our Story</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display tracking-tighter leading-tight mb-8 sm:mb-10 lg:mb-12">
             Why we built<br />
-            <span className="text-zinc-500">Veira.</span>
+            <span className="text-purple-400">Veira.</span>
           </h1>
 
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
-            <div className="space-y-5 sm:space-y-6 lg:space-y-8">
-              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed font-medium">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+            <div className="space-y-4 sm:space-y-5">
+              <p className="text-base sm:text-lg lg:text-xl text-purple-200 leading-relaxed font-medium">
                 Running a business should not mean carrying everything alone.
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed font-medium">
-                Most small and growing businesses struggle not because they lack ambition, but because operations are heavy. Sales systems break. Inventory gets messy. Follow-ups are forgotten. Technology becomes another responsibility instead of support.
+              <p className="text-base sm:text-lg text-purple-300 leading-relaxed">
+                Most small businesses struggle not because they lack ambition, but because operations are heavy. Sales systems break. Inventory gets messy. Technology becomes another responsibility instead of support.
               </p>
             </div>
-
-            <div className="space-y-5 sm:space-y-6 lg:space-y-8">
-              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed font-medium">
+            <div className="space-y-4 sm:space-y-5">
+              <p className="text-base sm:text-lg text-purple-300 leading-relaxed">
                 We built Veira to change that. Not by adding more tools, but by taking operational work off your plate entirely.
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed font-medium">
-                Veira is a productised service. We install POS systems, deploy AI agents, build websites, and manage cloud infrastructure. You get the benefits of modern business systems without hiring IT staff or learning new software.
+              <p className="text-base sm:text-lg text-purple-300 leading-relaxed">
+                Veira is a productised service. We install POS systems, deploy AI agents, build websites, and manage cloud infrastructure. You get modern business systems without hiring IT staff.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-16 sm:py-20 lg:py-24 border-t border-zinc-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-            <div>
-              <span className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-4 sm:mb-6 block">Our Mission</span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-5 sm:mb-6 lg:mb-8">
-                Operations that run without you
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed">
-                We want every Kenyan business owner to have access to enterprise-grade systems without enterprise complexity. Pay only when you sell. Get support when you need it. Focus on what you do best.
-              </p>
-            </div>
-            <div className="bg-zinc-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-zinc-800">
-              <div className="space-y-4 sm:space-y-5 lg:space-y-6">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm sm:text-base text-zinc-300">Local installation in Kenya</span>
-                </div>
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm sm:text-base text-zinc-300">24/7 WhatsApp support</span>
-                </div>
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm sm:text-base text-zinc-300">1.5% success fee model</span>
-                </div>
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm sm:text-base text-zinc-300">Free installation and training</span>
-                </div>
-              </div>
-            </div>
+      {/* GBV Commitment */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-purple-900/50 border-y border-purple-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-800/50 rounded-full mb-4 sm:mb-6">
+            <span className="text-lg sm:text-xl">💜</span>
+            <span className="text-xs sm:text-sm font-bold text-purple-200 uppercase tracking-widest">Our Commitment</span>
           </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight mb-4 sm:mb-6">
+            10% of profits fight GBV
+          </h2>
+          <p className="text-base sm:text-lg text-purple-300 max-w-2xl mx-auto">
+            Every year, we allocate 10% of our annual profits to organizations that fight gender-based violence and support survivors in Kenya. Business success should create positive change.
+          </p>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-zinc-900">
+      <section className="py-12 sm:py-16 lg:py-20 bg-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-            <span className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Our Values</span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
-              What guides us
-            </h2>
+          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <span className="text-[9px] sm:text-[10px] font-bold text-purple-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-2 sm:mb-3 block">Our Values</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight">What guides us</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-8">
-            <div className="bg-zinc-950 border border-zinc-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10">
-              <div className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-5 lg:mb-6">🎯</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 lg:mb-4">Clarity over complexity</h3>
-              <p className="text-sm sm:text-base text-zinc-500 leading-relaxed">
-                We believe business systems should be simple to use and simple to understand. No jargon. No hidden features. Just tools that work.
-              </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            <div className="bg-purple-950 border border-purple-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+              <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">🎯</div>
+              <h3 className="text-lg sm:text-xl font-bold font-display mb-2 sm:mb-3">Clarity over complexity</h3>
+              <p className="text-sm sm:text-base text-purple-400">Business systems should be simple to use and simple to understand. No jargon. No hidden features.</p>
             </div>
-            <div className="bg-zinc-950 border border-zinc-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10">
-              <div className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-5 lg:mb-6">🤝</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 lg:mb-4">Aligned incentives</h3>
-              <p className="text-sm sm:text-base text-zinc-500 leading-relaxed">
-                We charge a success fee, not upfront payments. This means we only win when your business wins. Our interests are aligned.
-              </p>
+            <div className="bg-purple-950 border border-purple-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+              <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">🤝</div>
+              <h3 className="text-lg sm:text-xl font-bold font-display mb-2 sm:mb-3">Aligned incentives</h3>
+              <p className="text-sm sm:text-base text-purple-400">We charge a success fee, not upfront payments. We only win when your business wins.</p>
             </div>
-            <div className="bg-zinc-950 border border-zinc-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 sm:col-span-2 md:col-span-1">
-              <div className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-5 lg:mb-6">🔧</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 lg:mb-4">Managed, not sold</h3>
-              <p className="text-sm sm:text-base text-zinc-500 leading-relaxed">
-                We do not sell software and disappear. We install, manage, and support. Your systems are our responsibility.
-              </p>
+            <div className="bg-purple-950 border border-purple-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 sm:col-span-2 md:col-span-1">
+              <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">🔧</div>
+              <h3 className="text-lg sm:text-xl font-bold font-display mb-2 sm:mb-3">Managed, not sold</h3>
+              <p className="text-sm sm:text-base text-purple-400">We do not sell software and disappear. We install, manage, and support. Your systems are our responsibility.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16 sm:py-20 lg:py-24 border-t border-zinc-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <span className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Our Team</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-5 sm:mb-6 lg:mb-8">
-            Built in Kenya, for Kenya
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-zinc-400 max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 px-4 sm:px-0">
-            Veira is built by a team that understands Kenyan business realities. We know the challenges of power outages, internet disruptions, and tight margins. Our systems are designed for how business actually works here.
-          </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-zinc-950">
+      <section className="py-12 sm:py-16 lg:py-20 bg-purple-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight mb-3 sm:mb-4">
             Ready to simplify operations?
           </h2>
-          <p className="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-10 px-4 sm:px-0">
+          <p className="text-sm sm:text-base lg:text-lg text-purple-300 mb-6 sm:mb-8">
             Talk to us on WhatsApp. We will show you how Veira can help your business.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
-            <a
-              href="https://wa.me/254700000000"
-              className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100 transition-all text-xs sm:text-sm uppercase tracking-widest"
-            >
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a href="https://wa.me/254755792377" target="_blank" rel="noopener noreferrer" className="px-8 sm:px-10 py-3 sm:py-3.5 bg-white text-purple-900 rounded-full font-bold hover:bg-purple-100 transition-all text-xs sm:text-sm uppercase tracking-widest">
               Ask on WhatsApp
             </a>
-            <Link
-              to="/pos"
-              className="px-8 sm:px-10 py-3 sm:py-4 border border-zinc-700 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-xs sm:text-sm uppercase tracking-widest"
-            >
+            <Link to="/pos" className="px-8 sm:px-10 py-3 sm:py-3.5 border border-purple-600 text-white rounded-full font-bold hover:bg-purple-800 transition-all text-xs sm:text-sm uppercase tracking-widest">
               See Our POS
             </Link>
           </div>

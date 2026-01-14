@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '@/components/SEOHead';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 const AgentsPage: React.FC = () => {
-  useEffect(() => {
-    document.title = 'AI Agents | Veira';
-  }, []);
+  const faqs = [
+    { question: "What are Veira AI Agents?", answer: "Glenn, Svan, and Tat are AI agents that monitor sales, inventory, and customer follow-ups automatically for your business." },
+    { question: "Do I need the POS first?", answer: "Yes, AI agents work with your Veira POS data to monitor and automate operations." }
+  ];
 
   const agents = [
     {
@@ -62,10 +65,15 @@ const AgentsPage: React.FC = () => {
 
   return (
     <div className="bg-zinc-900 text-white min-h-screen">
+      <SEOHead 
+        title="AI Agents Kenya | Automated Business Operations Nairobi"
+        description="Get AI agents that monitor your sales, inventory & customers 24/7. Glenn, Svan & Tat automate Kenyan business operations. Works with Veira POS."
+        faqs={faqs}
+      />
       {/* Hero */}
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 text-center">
+      <section className="pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-20 text-center">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <span className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">AI Agents</span>
+          <Breadcrumbs className="justify-center mb-6 sm:mb-8 text-zinc-400" />
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight mb-4 sm:mb-6">
             Operations that run<br />
             <span className="text-zinc-500">without you.</span>
