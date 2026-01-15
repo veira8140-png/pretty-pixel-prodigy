@@ -5,6 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import POSPage from "./pages/POS";
+import POSCity from "./pages/POSCity";
+import POSBusiness from "./pages/POSBusiness";
 import ETIMSPage from "./pages/ETIMS";
 import AgentsPage from "./pages/Agents";
 import CloudPage from "./pages/Cloud";
@@ -22,14 +24,23 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         
-        {/* POS Routes */}
+        {/* POS Routes - Static */}
         <Route path="/pos" element={<POSPage />} />
         <Route path="/pos/pricing" element={<POSPage variant="pricing" />} />
         <Route path="/pos/free-pos" element={<POSPage variant="free" />} />
         <Route path="/pos/etims" element={<POSPage variant="compliance" />} />
-        <Route path="/pos/:city" element={<POSPage />} />
-        <Route path="/pos/:city/:industry" element={<POSPage />} />
-        <Route path="/pos/for/:industry" element={<POSPage />} />
+        
+        {/* POS Routes - Business Type (national) */}
+        <Route path="/pos/for-:business" element={<POSBusiness />} />
+        
+        {/* POS Routes - City */}
+        <Route path="/pos/:city" element={<POSCity />} />
+        <Route path="/pos/:city/registration" element={<POSCity />} />
+        <Route path="/pos/:city/pricing" element={<POSCity />} />
+        <Route path="/pos/:city/etims" element={<POSCity />} />
+        
+        {/* POS Routes - City + Business Type */}
+        <Route path="/pos/:city/for-:business" element={<POSBusiness />} />
         
         {/* Other Product Pages */}
         <Route path="/etims" element={<ETIMSPage />} />
