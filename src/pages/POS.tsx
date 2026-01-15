@@ -58,9 +58,9 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
       };
     }
     return {
-      title: "POS System Kenya | eTIMS Compliant Point of Sale Nairobi",
-      description: "Get the best POS system in Kenya. eTIMS compliant, accepts M-Pesa & cards. Free installation in Nairobi. Trusted by restaurants, retail & pharmacies.",
-      h1: "POS Terminal"
+      title: "Free ETIMS Compliant POS System for Kenya",
+      description: "Get a free ETIMS compliant POS system in Kenya. Veira helps restaurants and retail stores process payments, send ETIMS receipts, and track sales in real time.",
+      h1: "Free ETIMS Compliant POS System in Kenya"
     };
   };
 
@@ -68,20 +68,20 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
 
   const faqs = [
     {
-      question: "How much does Veira POS cost?",
-      answer: "There is no upfront software cost. We charge a 1.5% success fee only when you make sales. Contact us for hardware pricing."
+      question: "Is Veira POS ETIMS compliant with KRA?",
+      answer: "Yes. Veira POS is fully integrated with KRA's ETIMS requirements. Every sale automatically generates a compliant receipt and is reported to KRA in real-time."
     },
     {
-      question: "Is the POS eTIMS compliant?",
-      answer: "Yes. Veira POS is fully integrated with KRA's eTIMS requirements, ensuring every sale is recorded correctly for tax compliance."
+      question: "What payment methods does the POS accept?",
+      answer: "Veira POS accepts M-Pesa, Airtel Money, Visa, Mastercard, and cash. All transactions are recorded automatically for ETIMS compliance."
     },
     {
-      question: "Can I use the POS offline?",
-      answer: "Yes. Our systems are built for real-world conditions in Kenya. You can process sales offline, and the data will sync automatically once you are back online."
+      question: "Can I use the POS on Android devices?",
+      answer: "Yes. Veira POS works on Android tablets and smartphones. We also provide dedicated POS hardware if you prefer."
     },
     {
-      question: "How long does installation take?",
-      answer: "Most installations are completed within a few hours. We handle everything from setup to training your staff."
+      question: "Do you provide daily sales reports?",
+      answer: "Yes. You receive automated WhatsApp reports every day with sales summaries, inventory alerts, and performance insights."
     }
   ];
 
@@ -115,12 +115,12 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
             <a
-              href="https://wa.me/254755792377"
+              href="https://wa.me/254755792377?text=Hi%20Veira%2C%20I%20want%20to%20start%20using%20a%20free%20ETIMS%20POS%20for%20my%20business"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 sm:px-10 py-3 sm:py-3.5 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-xs sm:text-sm uppercase tracking-widest"
             >
-              Get Free POS
+              Start Free ETIMS POS
             </a>
             <Link
               to="/pos/pricing"
@@ -138,7 +138,7 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
             <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-2 sm:mb-3 block">Features</span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display tracking-tight text-zinc-900">
-              Everything you need to sell
+              Built for KRA ETIMS Requirements
             </h2>
           </div>
 
@@ -161,7 +161,7 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
             <div>
               <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Pricing</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-3 sm:mb-4">
-                No upfront cost.
+                Cloud Based POS with Daily WhatsApp Reports
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed mb-5 sm:mb-6">
                 We install the POS for free. You pay only 1.5% success fee when you make sales. Hardware pricing available on request.
@@ -202,9 +202,9 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] mb-4 sm:mb-6">Related Pages</h3>
           <div className="flex flex-wrap gap-2 sm:gap-3">
+            <Link to="/etims" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">KRA ETIMS POS</Link>
             <Link to="/pos/etims" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">eTIMS Compliant POS</Link>
             <Link to="/pos/pricing" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">POS Pricing</Link>
-            <Link to="/pos/for/restaurants" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">Restaurant POS</Link>
             <Link to="/pos/for/retail" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">Retail POS</Link>
             <Link to="/agents" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">AI Agents</Link>
             <Link to="/cloud" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">Cloud</Link>

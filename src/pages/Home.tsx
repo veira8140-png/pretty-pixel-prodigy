@@ -6,20 +6,20 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 const Home: React.FC = () => {
   const faqs = [
     {
-      question: "How much does Veira POS cost in Kenya?",
-      answer: "Veira POS has no upfront software cost. You only pay a 1.5% success fee when you make sales. Contact us for hardware pricing."
+      question: "What is an ETIMS compliant POS system?",
+      answer: "An ETIMS compliant POS system automatically sends every sale to KRA in real-time, generating tax-compliant receipts. Veira POS is fully integrated with KRA's ETIMS requirements."
     },
     {
-      question: "Is Veira POS eTIMS compliant?",
-      answer: "Yes, Veira POS is fully integrated with KRA's eTIMS requirements, ensuring every sale is recorded correctly for tax compliance in Kenya."
+      question: "Is Veira POS free for restaurants and retail in Kenya?",
+      answer: "Yes. Veira POS has no upfront software cost. You only pay a 1.5% success fee when you make sales. Free installation and training included."
     },
     {
-      question: "How long does POS installation take in Nairobi?",
-      answer: "Most installations in Nairobi and surrounding areas are completed within a few hours. We handle setup, training, and support."
+      question: "Does Veira POS work with M-Pesa?",
+      answer: "Yes. Veira POS accepts M-Pesa, Airtel Money, cards, and cash. All payments are recorded automatically for ETIMS compliance."
     },
     {
-      question: "What businesses use Veira POS?",
-      answer: "Restaurants, retail shops, pharmacies, hardware stores, salons, and service businesses across Kenya use Veira for operations."
+      question: "How quickly can I get ETIMS POS installed in Nairobi?",
+      answer: "Most installations in Nairobi and across Kenya are completed within a few hours. We handle setup, KRA integration, and staff training."
     }
   ];
 
@@ -64,9 +64,9 @@ const Home: React.FC = () => {
   return (
     <div className="bg-zinc-50">
       <SEOHead 
-        title="Free POS System Kenya | eTIMS Compliant Point of Sale Nairobi"
-        description="Get a free eTIMS compliant POS system in Kenya. Veira offers managed POS, AI agents & cloud for restaurants, retail & pharmacies in Nairobi. No upfront cost."
-        keywords="POS Kenya, free POS Nairobi, eTIMS compliant POS, point of sale Kenya, restaurant POS Nairobi, retail POS Kenya"
+        title="ETIMS Compliant POS System in Kenya | Free Restaurant & Retail POS"
+        description="Veira is a free ETIMS compliant POS system for restaurants and retail businesses in Kenya. Accept M-Pesa, track sales, and stay KRA compliant."
+        keywords="ETIMS compliant POS system Kenya, free POS system Kenya, restaurant POS Kenya, retail POS Kenya, KRA ETIMS POS, cloud POS Kenya"
         faqs={faqs}
       />
 
@@ -79,19 +79,21 @@ const Home: React.FC = () => {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter font-display text-zinc-900 leading-[0.95] mb-4 sm:mb-6">
-            Business operations,<br />
-            <span className="text-zinc-300">done for you.</span>
+            ETIMS Compliant POS<br />
+            <span className="text-zinc-400">for Restaurants & Retail in Kenya</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8 font-medium px-4 sm:px-0">
-            Automate your checkout, inventory, and customer retention. We handle the systems, you handle the growth.
+            Accept M-Pesa, cards, and cash. Track sales. Stay KRA compliant. Free installation for Kenyan businesses.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
-            <Link
-              to="/pos"
+            <a
+              href="https://wa.me/254755792377?text=Hi%20Veira%2C%20I%20want%20to%20get%20a%20free%20ETIMS%20POS%20for%20my%20business"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 sm:px-8 py-3 sm:py-3.5 bg-zinc-900 text-white rounded-full font-bold hover:bg-zinc-800 transition-all text-xs sm:text-sm uppercase tracking-widest shadow-xl active:scale-95"
             >
-              Get started for free
-            </Link>
+              Get Free POS on WhatsApp
+            </a>
             <Link
               to="/use-cases"
               className="px-6 sm:px-8 py-3 sm:py-3.5 bg-white border border-zinc-200 text-zinc-900 rounded-full font-bold hover:bg-zinc-50 transition-all text-xs sm:text-sm uppercase tracking-widest shadow-sm active:scale-95"
@@ -105,7 +107,7 @@ const Home: React.FC = () => {
       {/* Operations Hub Links */}
       <section className="py-10 sm:py-12 lg:py-14 border-y border-zinc-100 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-5 sm:mb-6 lg:mb-8">Operations Hub</h2>
+          <h2 className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-5 sm:mb-6 lg:mb-8">Why Kenyan Businesses Choose Veira POS</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
             {operationsLinks.map((link, idx) => (
               <Link 
@@ -126,7 +128,7 @@ const Home: React.FC = () => {
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
             <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-2 sm:mb-3 block">What We Provide</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-display text-zinc-900">
-              One system. Complete control.
+              KRA ETIMS Compliance Made Simple
             </h2>
           </div>
 
@@ -158,7 +160,7 @@ const Home: React.FC = () => {
             <div>
               <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Why Veira</span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-4 sm:mb-6">
-                Pay only when you sell.
+                Free POS with Android Hardware Support
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-zinc-400 leading-relaxed mb-5 sm:mb-6">
                 No upfront costs. No monthly fees. Just a 1.5% success fee when your business makes sales. We only win when you win.
@@ -207,7 +209,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block">Trusted By</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display tracking-tight text-zinc-900 mb-3 sm:mb-4">
-            Kenyan businesses choose Veira
+            Get Started in Minutes
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-zinc-500 max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-0">
             Restaurants, retail shops, pharmacies, and hardware stores across Kenya use Veira to handle operations quietly in the background.
