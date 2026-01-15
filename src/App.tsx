@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import POSPage from "./pages/POS";
+import ETIMSPage from "./pages/ETIMS";
 import AgentsPage from "./pages/Agents";
 import CloudPage from "./pages/Cloud";
 import WebsitesPage from "./pages/Websites";
@@ -31,8 +32,8 @@ const App = () => (
         <Route path="/pos/for/:industry" element={<POSPage />} />
         
         {/* Other Product Pages */}
+        <Route path="/etims" element={<ETIMSPage />} />
         <Route path="/agents" element={<AgentsPage />} />
-        <Route path="/cloud" element={<CloudPage />} />
         <Route path="/cloud/hosting" element={<CloudPage variant="hosting" />} />
         <Route path="/cloud/maintenance" element={<CloudPage variant="maintenance" />} />
         <Route path="/websites" element={<WebsitesPage />} />
