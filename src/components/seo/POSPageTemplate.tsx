@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Check, ArrowRight, Shield, Smartphone, TrendingUp, Clock, MessageCircle, MapPin, Store, Receipt, Wallet } from 'lucide-react';
+import { Check, ArrowRight, Shield, Smartphone, TrendingUp, Clock, MessageCircle, MapPin, Store, Receipt, Wallet, Phone, Users, Package, ChevronRight, AlertTriangle, Zap, BarChart3, Lock, CheckCircle2, XCircle, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { 
   City, IntentType, intents, offer, trustSignals, 
-  generateFaqs, generateSchema, businessTypes, cities 
+  generateFaqs, generateSchema, businessTypes, cities,
+  contentSections, getSiloLinks, localTrustElements
 } from '@/data/seoData';
 import { Link } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
   const intentData = intents[intent];
   const faqs = generateFaqs(city, intent);
   const schemas = generateSchema(city, intent, faqs);
+  const siloLinks = getSiloLinks(city, intent);
   
   const title = intentData.titleTemplate.replace("{city}", city);
   const description = intentData.descTemplate.replace("{city}", city);
@@ -32,11 +34,18 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
     { label: intentData.action },
   ];
 
-  // Get sibling cities for internal linking
-  const siblingCities = cities.filter(c => c !== city).slice(0, 5);
+  // Get sibling cities for internal linking (4 as per silo rules)
+  const siblingCities = cities.filter(c => c !== city).slice(0, 4);
   
-  // Get related business types
-  const relatedBusinessTypes = businessTypes.slice(0, 7);
+  // Get related business types (6 as per child links)
+  const relatedBusinessTypes = businessTypes.slice(0, 6);
+
+  // Content sections
+  const directAnswer = contentSections.directAnswer(city, intent);
+  const problemSection = contentSections.whyProblemExists(city);
+  const solutionSection = contentSections.howVeiraSolves(city);
+  const steps = contentSections.stepByStep(city);
+  const comparison = contentSections.comparisonTable;
 
   const ctaUrl = `${offer.whatsappUrl}?text=Hi! I want a free POS system in ${city}. ${businessType ? `I run a ${businessType}.` : ''}`;
 
@@ -45,7 +54,7 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`POS ${city}, ETIMS POS ${city}, free POS Kenya, M-Pesa POS ${city}, restaurant POS ${city}, retail POS ${city}`} />
+        <meta name="keywords" content={`POS ${city}, ETIMS POS ${city}, free POS Kenya, M-Pesa POS ${city}, restaurant POS ${city}, retail POS ${city}, KRA compliant POS ${city}`} />
         <link rel="canonical" href={canonicalUrl} />
         
         <meta property="og:title" content={title} />
@@ -64,6 +73,7 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
         <script type="application/ld+json">{JSON.stringify(schemas.localBusiness)}</script>
         <script type="application/ld+json">{JSON.stringify(schemas.product)}</script>
         <script type="application/ld+json">{JSON.stringify(schemas.howTo)}</script>
+        <script type="application/ld+json">{JSON.stringify(schemas.breadcrumb)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -79,7 +89,7 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
             >
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-2 mb-6">
-                {trustSignals.slice(0, 3).map((signal) => (
+                {trustSignals.slice(0, 4).map((signal) => (
                   <span key={signal} className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">
                     <Check className="w-3 h-3" />
                     {signal}
@@ -91,154 +101,253 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
                 {h1}
               </h1>
               
-              <p className="text-lg md:text-xl text-zinc-400 mb-8 max-w-2xl leading-relaxed">
-                {intent === 'registration' && `Free POS hardware, free setup, free delivery to ${city}. Accept M-Pesa, cards, and cash. Track sales and stay KRA compliant.`}
-                {intent === 'pricing' && `No hidden fees, no monthly subscription. Get your free POS in ${city} with just KES 3,500 refundable deposit. Same-day activation.`}
-                {intent === 'compliance' && `Every receipt sent automatically to KRA. Avoid penalties up to KES 1 million. Get your ETIMS POS in ${city} today.`}
-              </p>
+              {/* Direct Answer - The most important content for SEO */}
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-6 mb-8">
+                <p className="text-lg text-white leading-relaxed">
+                  {directAnswer}
+                </p>
+              </div>
 
               {/* Offer Highlights */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
                 <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-white">{offer.posPrice}</p>
-                  <p className="text-sm text-zinc-400">POS Hardware</p>
+                  <p className="text-xs text-zinc-400">POS Hardware</p>
                 </div>
                 <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-white">{offer.data}</p>
-                  <p className="text-sm text-zinc-400">Data Included</p>
+                  <p className="text-xs text-zinc-400">Data Included</p>
                 </div>
                 <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-white">{offer.setup}</p>
-                  <p className="text-sm text-zinc-400">Setup & Training</p>
+                  <p className="text-xs text-zinc-400">Setup & Training</p>
                 </div>
                 <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-white">{offer.delivery}</p>
+                  <p className="text-xs text-zinc-400">Delivery to {city}</p>
+                </div>
+                <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-center col-span-2 md:col-span-1">
                   <p className="text-2xl font-bold text-emerald-400">KES {offer.depositKes.toLocaleString()}</p>
-                  <p className="text-sm text-zinc-400">{offer.depositType} Deposit</p>
+                  <p className="text-xs text-zinc-400">{offer.depositType} Deposit</p>
                 </div>
               </div>
 
-              <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 h-14 text-lg">
-                <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Get Free POS on WhatsApp
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 h-14 text-lg">
+                  <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Get Free POS on WhatsApp
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-zinc-600 text-white hover:bg-zinc-800 h-14">
+                  <a href={`tel:${offer.whatsappNumber}`}>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call {offer.whatsappNumber}
+                  </a>
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Why This Problem Exists */}
+        {/* Section 2: Why This Problem Exists */}
         <section className="py-16 md:py-20 bg-zinc-900">
           <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-8">
-              Why {city} Businesses Need a Modern POS
-            </h2>
+            <div className="max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                {problemSection.title}
+              </h2>
+              <p className="text-zinc-400 mb-10 leading-relaxed">
+                Running a business in {city} comes with real challenges. Without the right systems, you're losing money every day without even knowing it. Here's what we see in businesses across Kenya.
+              </p>
+            </div>
+            
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
-                <Receipt className="w-10 h-10 text-red-400 mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">KRA ETIMS Penalties</h3>
-                <p className="text-zinc-400">Businesses without ETIMS-compliant receipts face fines up to KES 1 million. Don't risk your {city} business.</p>
-              </div>
-              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
-                <Wallet className="w-10 h-10 text-amber-400 mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">Lost M-Pesa Payments</h3>
-                <p className="text-zinc-400">Manual tracking leads to missed payments and theft. See every M-Pesa transaction in real-time.</p>
-              </div>
-              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
-                <TrendingUp className="w-10 h-10 text-blue-400 mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">No Sales Visibility</h3>
-                <p className="text-zinc-400">Can't track what sells, what's in stock, or daily profits? Veira POS gives you daily WhatsApp reports.</p>
-              </div>
+              {problemSection.points.map((point, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6"
+                >
+                  <AlertTriangle className="w-10 h-10 text-amber-400 mb-4" />
+                  <h3 className="text-lg font-semibold text-white mb-3">{point.problem}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{point.explanation}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How Veira Solves It */}
+        {/* Section 3: How Veira Solves It */}
         <section className="py-16 md:py-20 bg-background">
           <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
-              How Veira POS Works in {city}
-            </h2>
-            <p className="text-zinc-400 mb-10 max-w-2xl">
-              From order to first sale in under 24 hours. Here's exactly what happens when you get Veira POS.
-            </p>
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                {solutionSection.title}
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                Veira POS is built specifically for Kenyan businesses. We understand M-Pesa, we know ETIMS, and we've helped hundreds of {city} businesses take control of their operations.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {solutionSection.solutions.map((solution, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-6"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                      {index === 0 && <Receipt className="w-6 h-6 text-emerald-400" />}
+                      {index === 1 && <Wallet className="w-6 h-6 text-emerald-400" />}
+                      {index === 2 && <BarChart3 className="w-6 h-6 text-emerald-400" />}
+                      {index === 3 && <Package className="w-6 h-6 text-emerald-400" />}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{solution.feature}</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed">{solution.benefit}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Step-by-Step Guide */}
+        <section className="py-16 md:py-20 bg-zinc-900">
+          <div className="container px-4 md:px-6">
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                How to Get Your Free POS in {city} – Step by Step
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                From first WhatsApp message to making your first sale takes less than 24 hours. Most businesses in {city} are up and running the same day.
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-5 gap-4">
-              {[
-                { step: "1", title: "WhatsApp Us", desc: "Send your location and business type" },
-                { step: "2", title: "Pay Deposit", desc: "KES 3,500 via M-Pesa (refundable)" },
-                { step: "3", title: "Same-Day Delivery", desc: `We deliver to your ${city} location` },
-                { step: "4", title: "Free Setup", desc: "We install, connect M-Pesa, train staff" },
-                { step: "5", title: "Start Selling", desc: "Accept payments, get daily reports" },
-              ].map((item) => (
-                <div key={item.step} className="relative bg-zinc-900 border border-zinc-800 rounded-xl p-5 text-center">
-                  <div className="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold mx-auto mb-3">
-                    {item.step}
-                  </div>
-                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-sm text-zinc-400">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Business Type Fit */}
-        <section className="py-16 md:py-20 bg-zinc-900">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
-              POS for Every Business in {city}
-            </h2>
-            <p className="text-zinc-400 mb-8">
-              Whether you run a kiosk or a supermarket, Veira POS adapts to your business.
-            </p>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
-              {relatedBusinessTypes.map((type) => (
-                <Link 
-                  key={type.slug}
-                  to={`/pos/${city.toLowerCase()}/for-${type.slug}`}
-                  className="bg-zinc-800/50 border border-zinc-700 hover:border-emerald-500/50 rounded-lg p-4 text-center transition-colors"
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative bg-zinc-800/50 border border-zinc-700 rounded-xl p-5"
                 >
-                  <Store className="w-6 h-6 text-zinc-400 mx-auto mb-2" />
-                  <span className="text-sm text-white">{type.name}</span>
-                </Link>
+                  <div className="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold mb-3">
+                    {step.step}
+                  </div>
+                  <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                  <p className="text-sm text-zinc-400 mb-2">{step.description}</p>
+                  <p className="text-xs text-emerald-400">{step.duration}</p>
+                  
+                  {index < steps.length - 1 && (
+                    <ChevronRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-zinc-600" />
+                  )}
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Comparison Section */}
+        {/* Section 5: Pricing & Offer Transparency */}
         <section className="py-16 md:py-20 bg-background">
           <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-8">
-              Veira POS vs Alternatives
-            </h2>
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Transparent Pricing – No Hidden Fees
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                We believe {city} business owners deserve honest pricing. Here's exactly what you pay and what you get. No surprises, no upsells, no hidden charges.
+              </p>
+            </div>
+            
+            <div className="max-w-3xl mx-auto bg-zinc-900 border border-emerald-500/30 rounded-2xl p-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-emerald-400">{offer.posPrice}</p>
+                  <p className="text-sm text-zinc-400">Android POS Hardware</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-emerald-400">{offer.setup}</p>
+                  <p className="text-sm text-zinc-400">Professional Setup</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-emerald-400">{offer.training}</p>
+                  <p className="text-sm text-zinc-400">Staff Training</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-emerald-400">{offer.delivery}</p>
+                  <p className="text-sm text-zinc-400">Delivery to {city}</p>
+                </div>
+              </div>
+              
+              <div className="border-t border-zinc-700 pt-6 text-center">
+                <p className="text-zinc-400 mb-2">Only payment required:</p>
+                <p className="text-4xl font-bold text-white mb-2">KES {offer.depositKes.toLocaleString()}</p>
+                <p className="text-emerald-400 font-medium">{offer.depositType} – Get it back if you return the device</p>
+                <p className="text-sm text-zinc-500 mt-4">{offer.guarantee}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: Comparison Table */}
+        <section className="py-16 md:py-20 bg-zinc-900">
+          <div className="container px-4 md:px-6">
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Veira POS vs Other Options in {city}
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                See how Veira compares to using just a Till Number, manual receipts, or other POS systems. The total cost difference over 12 months is significant.
+              </p>
+            </div>
             
             <div className="overflow-x-auto">
-              <table className="w-full text-left">
+              <table className="w-full text-left min-w-[600px]">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="pb-4 text-zinc-400 font-medium">Feature</th>
-                    <th className="pb-4 text-emerald-400 font-semibold">Veira POS</th>
-                    <th className="pb-4 text-zinc-400 font-medium">Till Number Only</th>
-                    <th className="pb-4 text-zinc-400 font-medium">Manual Receipts</th>
+                  <tr className="border-b border-zinc-700">
+                    {comparison.headers.map((header, i) => (
+                      <th key={i} className={`pb-4 pr-4 ${i === 1 ? 'text-emerald-400 font-semibold' : 'text-zinc-400 font-medium'}`}>
+                        {header}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody className="text-sm">
-                  {[
-                    ["ETIMS Compliance", "✓ Automatic", "✗ No", "✗ No"],
-                    ["M-Pesa Integration", "✓ Real-time", "✓ Basic", "✗ Manual"],
-                    ["Sales Tracking", "✓ Daily WhatsApp", "✗ No", "✗ No"],
-                    ["Inventory Management", "✓ Included", "✗ No", "✗ No"],
-                    ["Monthly Fee", "Free", "KES 100+", "Pen & Paper"],
-                    ["Staff Monitoring", "✓ Yes", "✗ No", "✗ No"],
-                  ].map((row, i) => (
+                  {comparison.features.map((row, i) => (
                     <tr key={i} className="border-b border-zinc-800/50">
-                      <td className="py-4 text-white">{row[0]}</td>
-                      <td className="py-4 text-emerald-400">{row[1]}</td>
-                      <td className="py-4 text-zinc-500">{row[2]}</td>
-                      <td className="py-4 text-zinc-500">{row[3]}</td>
+                      <td className="py-4 pr-4 text-white">{row.name}</td>
+                      <td className="py-4 pr-4">
+                        <span className={row.veira.startsWith('✓') ? 'text-emerald-400' : 'text-white'}>
+                          {row.veira}
+                        </span>
+                      </td>
+                      <td className="py-4 pr-4">
+                        <span className={row.till.startsWith('✗') ? 'text-red-400' : 'text-zinc-400'}>
+                          {row.till}
+                        </span>
+                      </td>
+                      <td className="py-4 pr-4">
+                        <span className={row.manual.startsWith('✗') ? 'text-red-400' : 'text-zinc-400'}>
+                          {row.manual}
+                        </span>
+                      </td>
+                      <td className="py-4">
+                        <span className={row.otherPos.startsWith('✓') ? 'text-emerald-400' : row.otherPos.startsWith('?') ? 'text-amber-400' : 'text-zinc-400'}>
+                          {row.otherPos}
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -247,76 +356,205 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-zinc-900">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-8">
-              Frequently Asked Questions – POS in {city}
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
-                  <h3 className="font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Internal Linking - Sibling Cities */}
+        {/* Section 7: Business Type Fit */}
         <section className="py-16 md:py-20 bg-background">
           <div className="container px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-6">
-              POS Systems in Other Kenyan Cities
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {siblingCities.map((siblingCity) => (
-                <Link
-                  key={siblingCity}
-                  to={`/pos/${siblingCity.toLowerCase()}/${intent}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-800/50 border border-zinc-700 hover:border-emerald-500/50 rounded-lg text-white transition-colors"
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                POS for Every Type of Business in {city}
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                Whether you run a small kiosk or a busy supermarket, Veira POS adapts to your business. Here are the most common business types we serve in {city} and across Kenya.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+              {relatedBusinessTypes.map((type) => (
+                <Link 
+                  key={type.slug}
+                  to={`/pos/${city.toLowerCase()}/for-${type.slug}`}
+                  className="bg-zinc-900 border border-zinc-800 hover:border-emerald-500/50 rounded-xl p-4 text-center transition-all hover:bg-zinc-800/50 group"
                 >
-                  <MapPin className="w-4 h-4 text-emerald-400" />
-                  {siblingCity}
+                  <Store className="w-8 h-8 text-zinc-400 mx-auto mb-3 group-hover:text-emerald-400 transition-colors" />
+                  <span className="text-sm font-medium text-white block mb-1">{type.name}</span>
+                  <span className="text-xs text-zinc-500">{city}</span>
                 </Link>
               ))}
-              <Link
-                to="/pos"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+            </div>
+            
+            <div className="text-center mt-8">
+              <Link 
+                to={`/pos/${city.toLowerCase()}`}
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
               >
-                View All Cities
+                View all business types in {city}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-16 md:py-20 bg-gradient-to-t from-emerald-950/20 to-zinc-900">
-          <div className="container px-4 md:px-6 text-center">
-            <h2 className="text-2xl md:text-4xl font-display font-bold text-white mb-4">
-              Ready to Get Your Free POS in {city}?
-            </h2>
-            <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-              Chat with us on WhatsApp. Tell us your location and business type. Get same-day delivery and free setup.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 h-14 text-lg">
-                <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Get Free POS on WhatsApp
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-zinc-700 text-white hover:bg-zinc-800 h-14">
-                <Link to="/pos/pricing">
-                  View Full Pricing
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+        {/* Section 8: Local Trust Signals */}
+        <section className="py-16 md:py-20 bg-zinc-900">
+          <div className="container px-4 md:px-6">
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Why {city} Businesses Trust Veira
+              </h2>
             </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
+                <Shield className="w-10 h-10 text-emerald-400 mb-4" />
+                <h3 className="font-semibold text-white mb-3">KRA ETIMS Certified</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{localTrustElements.kraReference}</p>
+              </div>
+              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
+                <Smartphone className="w-10 h-10 text-emerald-400 mb-4" />
+                <h3 className="font-semibold text-white mb-3">M-Pesa Integration</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{localTrustElements.mpesaIntegration}</p>
+              </div>
+              <div className="bg-zinc-800/50 border border-zinc-700 rounded-xl p-6">
+                <Lock className="w-10 h-10 text-emerald-400 mb-4" />
+                <h3 className="font-semibold text-white mb-3">Refund Guarantee</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{localTrustElements.refundPolicy}</p>
+              </div>
+            </div>
+            
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              {trustSignals.map((signal) => (
+                <span key={signal} className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-zinc-800/50 border border-zinc-700 rounded-lg text-zinc-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  {signal}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 9: FAQ Section (8+ questions) */}
+        <section className="py-16 md:py-20 bg-background">
+          <div className="container px-4 md:px-6">
+            <div className="max-w-4xl mb-10">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Frequently Asked Questions – POS in {city}
+              </h2>
+              <p className="text-zinc-400 leading-relaxed">
+                Get answers to the most common questions from {city} business owners about Veira POS, ETIMS compliance, pricing, and setup.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+              {faqs.map((faq, index) => (
+                <motion.div 
+                  key={index} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-6"
+                >
+                  <h3 className="font-semibold text-white mb-3 flex items-start gap-3">
+                    <HelpCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    {faq.question}
+                  </h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed pl-8">{faq.answer}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 10: Internal Linking - Semantic Silo Structure */}
+        <section className="py-16 md:py-20 bg-zinc-900">
+          <div className="container px-4 md:px-6">
+            {/* Parent Link */}
+            <div className="mb-8">
+              <Link
+                to={siloLinks.parent.href}
+                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors text-sm"
+              >
+                <ArrowRight className="w-4 h-4 rotate-180" />
+                {siloLinks.parent.label}
+              </Link>
+            </div>
+            
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-6">
+              POS Systems in Other Kenyan Cities
+            </h2>
+            
+            {/* Sibling City Links */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {siblingCities.map((siblingCity, index) => (
+                <Link
+                  key={siblingCity}
+                  to={`/pos/${siblingCity.toLowerCase()}/${intent}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-800/50 border border-zinc-700 hover:border-emerald-500/50 rounded-lg text-white transition-colors"
+                >
+                  <MapPin className="w-4 h-4 text-emerald-400" />
+                  {index === 0 ? `POS in ${siblingCity}` : siblingCity}
+                </Link>
+              ))}
+              <Link
+                to="/pos"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+              >
+                View All 25 Cities
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            
+            {/* Child Links - Related Pages */}
+            <h3 className="text-lg font-semibold text-white mb-4">More POS Information for {city}</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {siloLinks.children.slice(0, 6).map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="flex items-center gap-2 px-4 py-3 bg-zinc-800/30 border border-zinc-800 hover:border-zinc-700 rounded-lg text-zinc-300 hover:text-white transition-colors text-sm"
+                >
+                  <ChevronRight className="w-4 h-4 text-zinc-500" />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 11: Final CTA */}
+        <section className="py-16 md:py-24 bg-gradient-to-t from-emerald-950/20 to-background">
+          <div className="container px-4 md:px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl md:text-4xl font-display font-bold text-white mb-4">
+                Ready to Get Your Free POS in {city}?
+              </h2>
+              <p className="text-zinc-400 mb-8 max-w-xl mx-auto leading-relaxed">
+                Join hundreds of {city} businesses already using Veira POS. Send us a WhatsApp message with your location and business type. We'll deliver and set up your free POS the same day.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 h-14 text-lg">
+                  <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Get Free POS on WhatsApp
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-zinc-600 text-white hover:bg-zinc-800 h-14">
+                  <Link to="/pos/pricing">
+                    View Full Pricing Details
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+              
+              <p className="text-sm text-zinc-500 mt-6">
+                {offer.guarantee} • {offer.activationTime} Activation • Free Delivery to {city}
+              </p>
+            </motion.div>
           </div>
         </section>
       </div>
