@@ -5,16 +5,10 @@
  * Supports: FAQPage, HowTo, Product, LocalBusiness, Article, Organization, BreadcrumbList
  */
 
-export interface FAQ {
-  question: string;
-  answer: string;
-}
+import { type FAQ, type HowToStep, type BreadcrumbItem } from '../types';
 
-export interface HowToStep {
-  name: string;
-  text: string;
-  url?: string;
-}
+// Re-export types for backwards compatibility (but not re-exported from index.ts)
+export type { FAQ, HowToStep, BreadcrumbItem };
 
 export interface ProductOffer {
   price: string;

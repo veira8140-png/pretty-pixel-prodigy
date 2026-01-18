@@ -6,23 +6,19 @@
  */
 
 import { type Industry } from '../config/industries';
-import { type Location } from '../config/locations';
+import { 
+  type ProblemPoint, 
+  type SolutionPoint, 
+  type ProcessStep,
+  type ComparisonRow 
+} from '../types';
+
+// Re-export from types for backwards compatibility
+export type { ProblemPoint, SolutionPoint, ProcessStep, ComparisonRow };
 
 export interface ContentSection {
   title: string;
   content: string | string[];
-}
-
-export interface ProblemPoint {
-  problem: string;
-  explanation: string;
-  icon?: string;
-}
-
-export interface SolutionPoint {
-  feature: string;
-  benefit: string;
-  icon?: string;
 }
 
 export interface StepItem {
@@ -153,14 +149,7 @@ export const generateStepByStep = (city: string = 'Kenya'): StepItem[] => [
   },
 ];
 
-// Comparison table data
-export interface ComparisonRow {
-  feature: string;
-  veira: string;
-  competitor1: string;
-  competitor2: string;
-  competitor3: string;
-}
+// Comparison table data (uses ComparisonRow from types)
 
 export const generateComparisonTable = (): {
   headers: string[];
