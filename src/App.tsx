@@ -16,6 +16,15 @@ import OurStory from "./pages/OurStory";
 import Testimonials from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
 
+// Authority Hub Pages
+import { 
+  POSSystemHub, 
+  ETIMSPOSHub, 
+  StaffTheftHub, 
+  DailySalesReportsHub,
+  IndustryHub 
+} from "./pages/hubs";
+
 const App = () => (
   <TooltipProvider>
     <Toaster />
@@ -24,6 +33,16 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         
+        {/* ============= AUTHORITY HUB PAGES ============= */}
+        <Route path="/pos-system" element={<POSSystemHub />} />
+        <Route path="/etims-pos" element={<ETIMSPOSHub />} />
+        <Route path="/staff-theft-prevention" element={<StaffTheftHub />} />
+        <Route path="/daily-sales-reports" element={<DailySalesReportsHub />} />
+        
+        {/* Industry Hub Pages - Dynamic */}
+        <Route path="/pos-for-:industry" element={<IndustryHub />} />
+        
+        {/* ============= POS ROUTES ============= */}
         {/* POS Routes - Static */}
         <Route path="/pos" element={<POSPage />} />
         <Route path="/pos/pricing" element={<POSPage variant="pricing" />} />
@@ -42,7 +61,7 @@ const App = () => (
         {/* POS Routes - City + Business Type */}
         <Route path="/pos/:city/for-:business" element={<POSBusiness />} />
         
-        {/* Other Product Pages */}
+        {/* ============= OTHER PRODUCT PAGES ============= */}
         <Route path="/etims" element={<ETIMSPage />} />
         <Route path="/agents" element={<AgentsPage />} />
         <Route path="/cloud/hosting" element={<CloudPage variant="hosting" />} />
@@ -50,7 +69,7 @@ const App = () => (
         <Route path="/websites" element={<WebsitesPage />} />
         <Route path="/websites/:city" element={<WebsitesPage />} />
         
-        {/* Content Pages */}
+        {/* ============= CONTENT PAGES ============= */}
         <Route path="/use-cases" element={<UseCases />} />
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/testimonials" element={<Testimonials />} />
