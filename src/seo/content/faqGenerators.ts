@@ -6,12 +6,10 @@
  */
 
 import { type Industry } from '../config/industries';
-import { type Location } from '../config/locations';
+import { type FAQ } from '../types';
 
-export interface FAQ {
-  question: string;
-  answer: string;
-}
+// Re-export FAQ type for backwards compatibility
+export type { FAQ };
 
 // Common base FAQs for all POS pages
 const baseFAQs = (city: string = 'Kenya'): FAQ[] => [
