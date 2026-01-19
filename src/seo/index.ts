@@ -7,9 +7,74 @@
 // Shared types - export first to establish canonical source
 export * from './types';
 
-// Config exports
+// Master config exports (new system) - primary source
+export {
+  // Site config
+  siteConfig,
+  seoDefaults,
+  // Hubs
+  hubs,
+  type HubDefinition,
+  type HubIntent,
+  // Business types
+  businessTypes,
+  type BusinessType,
+  // Fears
+  fears,
+  type Fear,
+  // Locations
+  locations,
+  nairobiNeighborhoods,
+  type LocationConfig,
+  type LocationTier,
+  // Templates
+  templates,
+  type TemplateConfig,
+  type TemplateType,
+  // Page entities
+  type PageEntity,
+  // Linking & validation
+  internalLinkingRules,
+  validationConfig,
+  sitemapConfig,
+  // Helpers
+  getHubById,
+  getBusinessTypeById,
+  getFearById,
+  getLocationById,
+  getTemplateConfig,
+  getAllLocations as getMasterLocations,
+  getLocationsByTier,
+  getBusinessTypesByPriority,
+  getFearsByUrgency,
+  generatePageSlug,
+  getEstimatedPageCount,
+  // Schema type from master
+  type SchemaType as MasterSchemaType,
+} from './config/masterConfig';
+
+// Page registry exports
+export {
+  generatePageEntity,
+  validatePageEntity,
+  generateInternalLinks,
+  enumerateAllPages,
+  getPageCountByCategory,
+  type ValidationResult,
+  type InternalLink,
+} from './config/pageRegistry';
+
+// Legacy config exports (for backward compatibility)
 export * from './config/pageTypes';
-export * from './config/locations';
+export {
+  counties,
+  nairobiAreas,
+  getAllLocations,
+  getLocationsByPriority,
+  getLocationBySlug,
+  formatLocationName,
+  type Location,
+} from './config/locations';
 export * from './config/industries';
 export * from './config/keywords';
 export * from './config/siteMap';
