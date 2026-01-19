@@ -3,19 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { FloatingChatbot } from './AIChatbot';
 import { PremiumFooter } from './PremiumFooter';
+import { getNavLinks } from '@/seo/config/siteMap';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = [
-    { label: 'POS', url: '/pos' },
-    { label: 'Agents', url: '/agents' },
-    { label: 'Cloud', url: '/cloud' },
-    { label: 'Apps', url: '/websites' },
-    { label: 'Use Cases', url: '/use-cases' },
-    { label: 'Our Story', url: '/our-story' }
-  ];
+  // Single source of truth for navigation
+  const navLinks = getNavLinks();
 
   return (
     <div className="min-h-screen flex flex-col font-sans">

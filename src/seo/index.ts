@@ -12,6 +12,7 @@ export * from './config/pageTypes';
 export * from './config/locations';
 export * from './config/industries';
 export * from './config/keywords';
+export * from './config/siteMap';
 
 // Schema exports - exclude FAQ/HowToStep to avoid duplicate
 export {
