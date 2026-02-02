@@ -12,36 +12,36 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 md:pt-16 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.1)_0%,transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.1)_0%,transparent_50%)]" />
+      {/* Background Pattern - using brand accent */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-accent/5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent)/0.08)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.06)_0%,transparent_50%)]" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 border border-primary/20 rounded-full mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          {/* Badge - brand accent */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/20 rounded-full mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
             <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-xs sm:text-sm font-medium text-primary">Built for Kenyan Businesses</span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">Built for Kenyan Businesses</span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - Playfair Display (marketing-headline class) */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] sm:leading-tight mb-4 sm:mb-6 animate-fade-up px-2" style={{ animationDelay: '0.2s' }}>
             Business systems that keep your business{' '}
-            <span className="text-primary">running</span>
+            <span className="text-accent">running</span>
           </h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - DM Sans body text */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 animate-fade-up px-4 sm:px-0" style={{ animationDelay: '0.3s' }}>
             Running a business is hard work. Your systems should make it easier. We help Kenyan businesses manage sales, stock, customers, and daily operations using tools that actually work.
           </p>
 
-          {/* CTAs */}
+          {/* CTAs - brand styling */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up px-4 sm:px-0" style={{ animationDelay: '0.4s' }}>
             <Button 
               onClick={scrollToContact}
               size="lg" 
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg group"
+              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group"
             >
               Get Started
               <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -49,7 +49,7 @@ export const HeroSection: React.FC = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg group"
+              className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group border-border hover:border-accent hover:bg-accent/5"
               onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Play className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />

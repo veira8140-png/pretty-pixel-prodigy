@@ -46,7 +46,7 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">What We Do</span>
+          <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">What We Do</span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
             Everything works together
           </h2>
@@ -60,12 +60,12 @@ export const ServicesSection: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group bg-card border border-border rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+              className="group bg-card border border-border rounded-lg p-5 sm:p-6 lg:p-8 hover:shadow-elevated hover:border-accent/30 transition-all duration-standard"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className="w-11 sm:w-12 lg:w-14 h-11 sm:h-12 lg:h-14 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-primary" />
+              {/* Icon - brand accent */}
+              <div className="w-11 sm:w-12 lg:w-14 h-11 sm:h-12 lg:h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 sm:mb-5 lg:mb-6 group-hover:bg-accent/20 transition-colors duration-standard">
+                <service.icon className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-accent" />
               </div>
 
               {/* Content */}

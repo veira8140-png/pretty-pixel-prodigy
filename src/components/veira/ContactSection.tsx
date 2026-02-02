@@ -38,7 +38,7 @@ export const ContactSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-20">
           {/* Left Content */}
           <div>
-            <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">Get Started</span>
+            <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">Get Started</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
               Ready to make your business run better?
             </h2>
@@ -49,17 +49,17 @@ export const ContactSection: React.FC = () => {
             {/* Contact Info */}
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
-                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 text-accent" />
                 </div>
                 <div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Call us</div>
-                  <div className="font-medium text-foreground text-sm sm:text-base">+254 700 000 000</div>
+                  <div className="font-medium text-foreground text-sm sm:text-base">+254 755 792 377</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
-                  <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <Mail className="w-4 sm:w-5 h-4 sm:h-5 text-accent" />
                 </div>
                 <div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Email us</div>
@@ -67,19 +67,19 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-accent" />
                 </div>
                 <div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Visit us</div>
-                  <div className="font-medium text-foreground text-sm sm:text-base">Nairobi, Kenya</div>
+                  <div className="font-medium text-foreground text-sm sm:text-base">Ruprani House, Moktar Daddah St, Nairobi</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Form */}
-          <div className="bg-card border border-border rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8">
+          <div className="bg-card border border-border rounded-lg p-5 sm:p-6 lg:p-8">
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 lg:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -154,7 +154,7 @@ export const ContactSection: React.FC = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-5 sm:py-6 text-base sm:text-lg"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-5 sm:py-6 text-base sm:text-lg font-semibold"
               >
                 {isSubmitting ? (
                   'Sending...'
