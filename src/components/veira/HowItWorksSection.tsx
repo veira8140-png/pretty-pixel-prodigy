@@ -28,7 +28,7 @@ export const HowItWorksSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">How It Works</span>
+          <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">How It Works</span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
             Simple. Clear. Reliable.
           </h2>
@@ -43,18 +43,18 @@ export const HowItWorksSection: React.FC = () => {
             <div key={step.number} className="relative">
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-14 lg:top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/30 to-primary/10" />
+                <div className="hidden md:block absolute top-14 lg:top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-accent/30 to-accent/10" />
               )}
 
-              <div className="relative bg-card border border-border rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="relative bg-card border border-border rounded-lg p-5 sm:p-6 lg:p-8 text-center hover:shadow-elevated hover:border-accent/30 transition-all duration-standard">
                 {/* Number Badge */}
-                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-6 sm:h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
+                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-6 sm:h-8 accent-gradient text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
                   {index + 1}
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 bg-primary/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5 lg:mb-6 mt-2 sm:mt-4">
-                  <step.icon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-primary" />
+                <div className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-5 lg:mb-6 mt-2 sm:mt-4">
+                  <step.icon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-accent" />
                 </div>
 
                 {/* Content */}

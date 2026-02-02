@@ -18,10 +18,11 @@ export const FooterSection: React.FC = () => {
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              <div className="w-7 sm:w-8 h-7 sm:h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-base sm:text-lg">V</span>
+              {/* Orb logo with brand gradient */}
+              <div className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #5A3D7D 0%, #7A59A6 100%)' }}>
+                <span className="text-white font-display font-bold text-base sm:text-lg lowercase">v</span>
               </div>
-              <span className="font-display font-semibold text-lg sm:text-xl">Veira</span>
+              <span className="font-display font-bold text-lg sm:text-xl lowercase tracking-tight">veira</span>
             </div>
             <p className="text-background/70 max-w-md mb-4 sm:mb-6 text-sm sm:text-base">
               Business systems that keep your business running. We help Kenyan businesses manage sales, stock, and customers with tools that actually work.
@@ -38,7 +39,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#services')}
-                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
                 >
                   Services
                 </button>
@@ -46,7 +47,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#how-it-works')}
-                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
                 >
                   How It Works
                 </button>
@@ -54,7 +55,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#who-we-serve')}
-                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
                 >
                   Who We Serve
                 </button>
@@ -62,7 +63,7 @@ export const FooterSection: React.FC = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('#why-veira')}
-                  className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
                 >
                   Why Veira
                 </button>
@@ -84,7 +85,7 @@ export const FooterSection: React.FC = () => {
         {/* Map Section */}
         <div className="mb-10 sm:mb-12">
           <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Find Us</h4>
-          <div className="rounded-lg sm:rounded-xl overflow-hidden h-40 sm:h-48 md:h-64 bg-background/10">
+          <div className="rounded-lg overflow-hidden h-40 sm:h-48 md:h-64 bg-background/10">
             <iframe
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ruprani+House,Moktar+Daddah+Street,Nairobi,Kenya"
               width="100%"
@@ -104,8 +105,8 @@ export const FooterSection: React.FC = () => {
             © {currentYear} Veira. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-background/50">
-            <Link to="/privacy" className="hover:text-background transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-background transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-background transition-colors duration-micro">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-background transition-colors duration-micro">Terms of Service</Link>
           </div>
         </div>
       </div>

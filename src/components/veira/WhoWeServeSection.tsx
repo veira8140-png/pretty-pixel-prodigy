@@ -40,7 +40,7 @@ export const WhoWeServeSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">Who We Serve</span>
+          <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">Who We Serve</span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
             Built for real Kenyan businesses
           </h2>
@@ -54,10 +54,10 @@ export const WhoWeServeSection: React.FC = () => {
           {audiences.map((audience) => (
             <div
               key={audience.title}
-              className="group flex items-start gap-3 sm:gap-4 bg-card border border-border rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6 hover:border-primary/30 hover:shadow-md transition-all"
+              className="group flex items-start gap-3 sm:gap-4 bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6 hover:border-accent/30 hover:shadow-soft transition-all duration-standard"
             >
-              <div className="w-10 sm:w-11 lg:w-12 h-10 sm:h-11 lg:h-12 bg-primary/10 rounded-md sm:rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                <audience.icon className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-primary" />
+              <div className="w-10 sm:w-11 lg:w-12 h-10 sm:h-11 lg:h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors duration-micro">
+                <audience.icon className="w-5 sm:w-5 lg:w-6 h-5 sm:h-5 lg:h-6 text-accent" />
               </div>
               <div className="min-w-0">
                 <h3 className="font-display text-base sm:text-lg font-semibold text-foreground mb-0.5 sm:mb-1">
