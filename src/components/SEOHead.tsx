@@ -15,17 +15,20 @@ interface SEOHeadProps {
   canonicalUrl?: string;
 }
 
+const BASE_URL = 'https://www.veirahq.com';
+
 export const SEOHead = ({ 
   title, 
   description, 
   keywords = 'POS Kenya, eTIMS compliant POS, free POS system Nairobi, business management Kenya',
-  image = '/og-image.png',
+  image = `${BASE_URL}/og-image.png`,
   url = typeof window !== 'undefined' ? window.location.href : '',
   faqs = [],
   canonicalUrl
 }: SEOHeadProps) => {
   const fullTitle = `${title} | Veira Kenya`;
   const canonical = canonicalUrl || url;
+  const fullImage = image.startsWith('http') ? image : `${BASE_URL}${image}`;
   
   // Generate FAQ Schema
   const faqSchema = faqs.length > 0 ? {
@@ -46,8 +49,8 @@ export const SEOHead = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Veira",
-    "url": "https://veirahq.com",
-    "logo": "https://veirahq.com/logo.png",
+    "url": BASE_URL,
+    "logo": `${BASE_URL}/favicon.png`,
     "description": "Business operations done for you. POS systems, AI agents, websites & cloud for Kenyan businesses.",
     "address": {
       "@type": "PostalAddress",
@@ -62,7 +65,10 @@ export const SEOHead = ({
       "availableLanguage": ["English", "Swahili"]
     },
     "sameAs": [
-      "https://wa.me/254755792377"
+      "https://wa.me/254755792377",
+      "https://x.com/veirahq",
+      "https://www.instagram.com/veirahq",
+      "https://www.tiktok.com/@veirahq"
     ]
   };
 
@@ -87,16 +93,20 @@ export const SEOHead = ({
       <meta property="og:url" content={url} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_KE" />
       <meta property="og:site_name" content="Veira Kenya" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@veirahq" />
+      <meta name="twitter:creator" content="@veirahq" />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImage} />
       
       {/* Structured Data - Organization */}
       <script type="application/ld+json">

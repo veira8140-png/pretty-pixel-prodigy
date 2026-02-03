@@ -176,6 +176,7 @@ export const siteMap: Record<string, PageConfig> = {
     description: 'Professional websites for Kenyan businesses. Mobile-first design, fast loading, and built for conversions.',
     navLabel: 'Apps',
     navOrder: 4,
+    navPath: '/websites', // Explicit nav path for Apps -> websites
     showInFooter: true,
     footerSection: 'products',
     schema: ['Product'],
