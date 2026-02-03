@@ -76,7 +76,7 @@ export const FooterSection: React.FC = () => {
             <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
             <ul className="space-y-2 sm:space-y-3 text-background/70 text-sm sm:text-base">
               <li>+254 755 792 377</li>
-              <li>hello@veira.co.ke</li>
+              <li>hello@veirahq.com</li>
               <li>Ruprani House, 3rd Floor, Moktar Daddah St, Nairobi</li>
             </ul>
           </div>

@@ -27,7 +27,7 @@ const StaffTheftHub = () => {
         'prevent cashier theft',
         'shop surveillance kenya',
       ]}
-      canonicalUrl="https://veira.co.ke/staff-theft-prevention"
+      canonicalUrl="https://veirahq.com/staff-theft-prevention"
       h1="Stop Employee Theft in Your Business"
       heroSubtitle="Every transaction tracked. Every payment logged. Every discount monitored. Know exactly what happens in your shop."
       directAnswer="Staff theft costs Kenyan retailers 3-5% of revenue annually. Most owners suspect it but cannot prove it. Veira POS tracks every transaction, logs every payment, monitors all discounts and voids, and sends you real-time alerts for suspicious activity. You can see exactly what each employee does during their shift. No more guessing. No more losing money. Get a free POS with theft prevention features. Only a refundable KES 3,500 deposit."

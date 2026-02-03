@@ -27,7 +27,7 @@ const DailySalesReportsHub = () => {
         'sales dashboard kenya',
         'monitor multiple branches',
       ]}
-      canonicalUrl="https://veira.co.ke/daily-sales-reports"
+      canonicalUrl="https://veirahq.com/daily-sales-reports"
       h1="Daily Sales Reports on WhatsApp"
       heroSubtitle="Know exactly how your business is doing. Every day. On your phone. No visiting required."
       directAnswer="Veira POS sends comprehensive daily sales reports directly to your WhatsApp. Every evening, you receive total sales, payment breakdown (cash vs M-Pesa), top-selling products, per-employee performance, discounts and voids, and gross profit. If you have multiple branches, monitor all of them from one dashboard. You do not need to visit your shop to know how it is performing. Get free POS hardware with automated reporting. Only a refundable KES 3,500 deposit."

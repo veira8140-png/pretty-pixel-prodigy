@@ -45,9 +45,9 @@ export const SEOHead = ({
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Veira Kenya",
-    "url": "https://veira.co.ke",
-    "logo": "https://veira.co.ke/logo.png",
+    "name": "Veira",
+    "url": "https://veirahq.com",
+    "logo": "https://veirahq.com/logo.png",
     "description": "Business operations done for you. POS systems, AI agents, websites & cloud for Kenyan businesses.",
     "address": {
       "@type": "PostalAddress",

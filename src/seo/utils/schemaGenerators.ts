@@ -73,7 +73,7 @@ export const generateProductSchema = (
   "description": description,
   "brand": {
     "@type": "Brand",
-    "name": "Veira Kenya"
+    "name": "Veira"
   },
   "offers": {
     "@type": "Offer",
@@ -84,7 +84,7 @@ export const generateProductSchema = (
     "url": url,
     "seller": {
       "@type": "Organization",
-      "name": "Veira Kenya"
+      "name": "Veira"
     }
   },
   ...(rating && {
@@ -147,15 +147,15 @@ export const generateArticleSchema = (
   ...(image && { "image": image }),
   "author": {
     "@type": "Organization",
-    "name": "Veira Kenya",
-    "url": "https://veira.co.ke"
+    "name": "Veira",
+    "url": "https://veirahq.com"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Veira Kenya",
+    "name": "Veira",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://veira.co.ke/logo.png"
+      "url": "https://veirahq.com/logo.png"
     }
   }
 });
@@ -164,9 +164,9 @@ export const generateArticleSchema = (
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Veira Kenya",
-  "url": "https://veira.co.ke",
-  "logo": "https://veira.co.ke/logo.png",
+  "name": "Veira",
+  "url": "https://veirahq.com",
+  "logo": "https://veirahq.com/logo.png",
   "description": "Business operations done for you. POS systems, AI agents, websites & cloud for Kenyan businesses.",
   "address": {
     "@type": "PostalAddress",

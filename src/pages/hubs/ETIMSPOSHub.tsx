@@ -26,7 +26,7 @@ const ETIMSPOSHub = () => {
         'kra approved pos',
         'etims compliance kenya',
       ]}
-      canonicalUrl="https://veira.co.ke/etims-pos"
+      canonicalUrl="https://veirahq.com/etims-pos"
       h1="ETIMS Compliant POS System for Kenyan Businesses"
       heroSubtitle="Automatic KRA receipts, zero penalties, complete tax compliance. Free setup included."
       directAnswer="ETIMS (Electronic Tax Invoice Management System) is mandatory for all VAT-registered businesses in Kenya. Non-compliance attracts penalties up to KES 1 million or 2% of turnover per month. Veira POS handles ETIMS automatically. Every sale generates a KRA-approved receipt with QR code, transmitted to KRA servers in real-time. You get free POS hardware, free setup, and free ETIMS activation. The only cost is a refundable KES 3,500 deposit."

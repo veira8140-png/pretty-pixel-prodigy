@@ -25,7 +25,7 @@ export const POSPageTemplate = ({ city, intent, businessType }: POSPageTemplateP
   const title = intentData.titleTemplate.replace("{city}", city);
   const description = intentData.descTemplate.replace("{city}", city);
   const h1 = intentData.h1Template.replace("{city}", city);
-  const canonicalUrl = `https://veira.co.ke/pos/${city.toLowerCase()}/${intent}`;
+  const canonicalUrl = `https://veirahq.com/pos/${city.toLowerCase()}/${intent}`;
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
