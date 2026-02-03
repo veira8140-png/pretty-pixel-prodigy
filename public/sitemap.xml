@@ -1,124 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Auto-generated sitemap for Veira Kenya - Updated 2025-01-15 -->
+<!-- Auto-generated sitemap for Veira - Updated 2026-02-03 -->
 <!-- Includes programmatic city, intent, and business type pages -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://veira.co.ke/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://veirahq.com/</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- POS Core Pages -->
   <url>
-    <loc>https://veira.co.ke/pos</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://veirahq.com/pos</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://veira.co.ke/pos/pricing</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://veirahq.com/pos/pricing</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://veira.co.ke/pos/etims</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://veirahq.com/pos/etims</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <!-- Authority Hub Pages -->
+  <url>
+    <loc>https://veirahq.com/pos-system</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veirahq.com/etims-pos</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veirahq.com/staff-theft-prevention</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://veirahq.com/daily-sales-reports</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   
   <!-- POS City Pages - Registration Intent -->
-  <url><loc>https://veira.co.ke/pos/nairobi</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://veira.co.ke/pos/mombasa</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://veira.co.ke/pos/kisumu</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/nakuru</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/eldoret</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/thika</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/ruiru</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/kitengela</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/machakos</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/meru</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/nyeri</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/embu</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/kericho</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/kakamega</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/bungoma</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/busia</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/narok</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/naivasha</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/malindi</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/voi</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veira.co.ke/pos/isiolo</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veira.co.ke/pos/garissa</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veira.co.ke/pos/kitui</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veira.co.ke/pos/migori</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veira.co.ke/pos/homa-bay</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://veirahq.com/pos/mombasa</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veirahq.com/pos/kisumu</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/nakuru</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/eldoret</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/thika</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/ruiru</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/kitengela</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/machakos</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/meru</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/nyeri</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/embu</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/kericho</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/kakamega</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/bungoma</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/busia</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/narok</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/naivasha</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/malindi</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/voi</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/isiolo</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/garissa</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/kitui</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/migori</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veirahq.com/pos/homa-bay</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
   
   <!-- POS City Pages - ETIMS Intent (Top 10 Cities) -->
-  <url><loc>https://veira.co.ke/pos/nairobi/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://veira.co.ke/pos/mombasa/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/kisumu/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/nakuru/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/eldoret/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/thika/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/ruiru/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/kitengela/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/machakos/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/meru/etims</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veirahq.com/pos/mombasa/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/kisumu/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/nakuru/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/eldoret/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/thika/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/ruiru/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/kitengela/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/machakos/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/meru/etims</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   
-  <!-- POS City Pages - Pricing Intent (Top 10 Cities) -->
-  <url><loc>https://veira.co.ke/pos/nairobi/pricing</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/mombasa/pricing</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/kisumu/pricing</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/nakuru/pricing</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/eldoret/pricing</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- POS City Pages - Pricing Intent (Top 5 Cities) -->
+  <url><loc>https://veirahq.com/pos/nairobi/pricing</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/mombasa/pricing</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/kisumu/pricing</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/nakuru/pricing</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/eldoret/pricing</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   
   <!-- POS Business Type Pages (National) -->
-  <url><loc>https://veira.co.ke/pos/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-shop</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-supermarket</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-pharmacy</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-bar</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-cafe</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-butchery</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-hardware</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-salon</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-barbershop</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-hotel</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-wholesale</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-kiosk</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/for-duka</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veirahq.com/pos/for-shop</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veirahq.com/pos/for-supermarket</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/for-pharmacy</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/for-bar</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-cafe</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-butchery</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-hardware</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-salon</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/for-barbershop</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/for-hotel</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/for-wholesale</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/for-kiosk</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/for-duka</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
   
   <!-- POS City + Business Type (Top City + Top Business) -->
-  <url><loc>https://veira.co.ke/pos/nairobi/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/nairobi/for-shop</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veira.co.ke/pos/nairobi/for-supermarket</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/nairobi/for-pharmacy</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/mombasa/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/mombasa/for-shop</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veira.co.ke/pos/kisumu/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/nakuru/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/pos/eldoret/for-restaurant</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi/for-shop</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi/for-supermarket</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/nairobi/for-pharmacy</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/mombasa/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/mombasa/for-shop</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veirahq.com/pos/kisumu/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/nakuru/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/pos/eldoret/for-restaurant</loc><lastmod>2026-02-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   
   <!-- ETIMS Intent Page -->
   <url>
-    <loc>https://veira.co.ke/etims</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://veirahq.com/etims</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Other Product Pages -->
-  <url><loc>https://veira.co.ke/agents</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veira.co.ke/cloud/hosting</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://veira.co.ke/cloud/maintenance</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://veira.co.ke/websites</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/agents</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veirahq.com/cloud/hosting</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veirahq.com/cloud/maintenance</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veirahq.com/websites</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   
   <!-- Content Pages -->
-  <url><loc>https://veira.co.ke/use-cases</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://veira.co.ke/our-story</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://veira.co.ke/testimonials</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veirahq.com/use-cases</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veirahq.com/our-story</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://veirahq.com/testimonials</loc><lastmod>2026-02-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

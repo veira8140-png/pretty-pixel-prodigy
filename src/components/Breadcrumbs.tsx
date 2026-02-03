@@ -51,7 +51,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": item.href ? `https://veira.co.ke${item.href}` : undefined
+      "item": item.href ? `https://veirahq.com${item.href}` : undefined
     }))
   };
 

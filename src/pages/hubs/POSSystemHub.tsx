@@ -27,7 +27,7 @@ const POSSystemHub = () => {
         'retail pos kenya',
         'pos software kenya',
       ]}
-      canonicalUrl="https://veira.co.ke/pos-system"
+      canonicalUrl="https://veirahq.com/pos-system"
       h1="Free POS System for Kenyan Businesses"
       heroSubtitle="ETIMS compliant, M-Pesa integrated, zero monthly fees. Join 500+ businesses across Kenya."
       directAnswer="Veira POS is a free point of sale system designed specifically for Kenyan businesses. You get free hardware worth KES 15,000, free delivery anywhere in Kenya, free setup and training, plus 15GB Safaricom data. The only cost is a refundable KES 3,500 deposit. Every sale automatically generates ETIMS-compliant receipts sent directly to KRA. Accept M-Pesa, Till Number, and card payments. Get daily sales reports on WhatsApp."
