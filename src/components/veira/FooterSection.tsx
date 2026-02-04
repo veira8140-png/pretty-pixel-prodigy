@@ -4,13 +4,6 @@ import { Link } from 'react-router-dom';
 export const FooterSection: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const socialLinks = [
     { name: 'X', url: 'https://x.com/veirahq', icon: (
       <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -36,14 +29,15 @@ export const FooterSection: React.FC = () => {
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              {/* Orb logo with brand gradient */}
-              <div className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #5A3D7D 0%, #7A59A6 100%)' }}>
-                <span className="text-white font-display font-bold text-base sm:text-lg lowercase">v</span>
-              </div>
+              {/* Purple Orb logo */}
+              <div 
+                className="w-7 sm:w-8 h-7 sm:h-8 rounded-full"
+                style={{ background: 'linear-gradient(135deg, #5A3D7D 0%, #7A59A6 100%)' }}
+              />
               <span className="font-display font-bold text-lg sm:text-xl lowercase tracking-tight">veira</span>
             </div>
             <p className="text-background/70 max-w-md mb-4 sm:mb-6 text-sm sm:text-base">
-              Business systems that keep your business running. We help Kenyan businesses manage sales, stock, and customers with tools that actually work.
+              The best affordable POS system in Kenya. Cloud-based point of sale software with M-Pesa integration, inventory management, and ETIMS compliance for retail shops, restaurants, and supermarkets.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-3 sm:gap-4">
@@ -53,7 +47,7 @@ export const FooterSection: React.FC = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-background/60 hover:text-background transition-colors duration-micro"
+                  className="text-background/60 hover:text-background transition-colors duration-150"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -62,22 +56,69 @@ export const FooterSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Products - with keywords */}
           <div>
-            <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+            <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">POS Solutions</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link 
                   to="/pos"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
-                  POS
+                  POS System Kenya
                 </Link>
               </li>
               <li>
                 <Link 
+                  to="/pos/for-restaurants"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
+                >
+                  Restaurant POS Kenya
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/pos/for-retail"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
+                >
+                  Retail POS System
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/pos/nairobi"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
+                >
+                  POS Nairobi
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/etims-pos"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
+                >
+                  ETIMS POS Kenya
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/pos/pricing"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
+                >
+                  POS System Price Kenya
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links + Contact */}
+          <div>
+            <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <ul className="space-y-2 sm:space-y-3 mb-6">
+              <li>
+                <Link 
                   to="/agents"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
                   Agents
                 </Link>
@@ -85,23 +126,23 @@ export const FooterSection: React.FC = () => {
               <li>
                 <Link 
                   to="/cloud/hosting"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
-                  Cloud
+                  Cloud Hosting
                 </Link>
               </li>
               <li>
                 <Link 
                   to="/websites"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
-                  Apps
+                  Apps & Websites
                 </Link>
               </li>
               <li>
                 <Link 
                   to="/use-cases"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
                   Use Cases
                 </Link>
@@ -109,16 +150,13 @@ export const FooterSection: React.FC = () => {
               <li>
                 <Link 
                   to="/our-story"
-                  className="text-background/70 hover:text-background transition-colors duration-micro text-sm sm:text-base"
+                  className="text-background/70 hover:text-background transition-colors duration-150 text-sm sm:text-base"
                 >
                   Our Story
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
+            
             <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
             <ul className="space-y-2 sm:space-y-3 text-background/70 text-sm sm:text-base">
               <li>+254 755 792 377</li>
@@ -130,7 +168,7 @@ export const FooterSection: React.FC = () => {
 
         {/* Map Section */}
         <div className="mb-10 sm:mb-12">
-          <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Find Us</h4>
+          <h4 className="font-display font-semibold mb-3 sm:mb-4 text-sm sm:text-base">POS System Suppliers in Nairobi</h4>
           <div className="rounded-lg overflow-hidden h-40 sm:h-48 md:h-64 bg-background/10">
             <iframe
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Ruprani+House,Moktar+Daddah+Street,Nairobi,Kenya"
@@ -140,19 +178,28 @@ export const FooterSection: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Veira - Ruprani House, Moktar Daddah St, Nairobi"
+              title="Veira POS - Ruprani House, Moktar Daddah St, Nairobi"
             ></iframe>
           </div>
+        </div>
+
+        {/* SEO Keywords Section */}
+        <div className="mb-8 pt-6 border-t border-background/10">
+          <p className="text-xs text-background/40 text-center">
+            Best POS system Kenya | Affordable POS Nairobi | Cloud POS software | Restaurant POS system | Retail POS Kenya | 
+            POS with M-Pesa integration | ETIMS compliant POS | Mobile POS Kenya | POS machine for sale | 
+            Supermarket POS system | POS system price Kenya | Point of sale Nairobi
+          </p>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-6 sm:pt-8 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-xs sm:text-sm text-background/50">
-            © {currentYear} Veira. All rights reserved.
+            © {currentYear} Veira. Best POS System Suppliers in Kenya. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-background/50">
-            <Link to="/privacy" className="hover:text-background transition-colors duration-micro">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-background transition-colors duration-micro">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-background transition-colors duration-150">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-background transition-colors duration-150">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -7,14 +7,16 @@ export const VeiraNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Who We Serve', href: '#who-we-serve' },
-    { label: 'Why Veira', href: '#why-veira' },
+    { label: 'POS', href: '/pos' },
+    { label: 'Agents', href: '/agents' },
+    { label: 'Apps', href: '/websites' },
+    { label: 'Cloud', href: '/cloud/hosting' },
+    { label: 'Use Cases', href: '/use-cases' },
+    { label: 'Our Story', href: '/our-story' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -25,34 +27,36 @@ export const VeiraNavbar: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - brand wordmark style */}
+          {/* Logo - Purple Orb + wordmark */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center">
-              <span className="text-white font-display font-bold text-lg">v</span>
-            </div>
+            {/* Purple sphere/orb */}
+            <div 
+              className="w-8 h-8 rounded-full flex items-center justify-center orb-state-idle"
+              style={{ background: 'linear-gradient(135deg, #5A3D7D 0%, #7A59A6 100%)' }}
+            />
             <span className="font-display font-bold text-xl text-foreground lowercase tracking-tight">veira</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.label}
-                onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-micro"
+                to={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-150"
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <Button 
-              onClick={() => scrollToSection('#contact')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+              onClick={scrollToContact}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
             >
-              Get Started
+              Get Free POS
             </Button>
           </div>
 
@@ -72,19 +76,20 @@ export const VeiraNavbar: React.FC = () => {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.label}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors duration-micro"
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors duration-150"
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <Button 
-              onClick={() => scrollToSection('#contact')}
-              className="w-full mt-4 bg-primary text-primary-foreground font-semibold"
+              onClick={scrollToContact}
+              className="w-full mt-4 bg-accent text-accent-foreground font-semibold"
             >
-              Get Started
+              Get Free POS
             </Button>
           </div>
         </div>

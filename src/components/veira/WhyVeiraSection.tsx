@@ -2,12 +2,12 @@ import React from 'react';
 import { Check } from 'lucide-react';
 
 const reasons = [
-  'Pricing is clear and predictable',
-  'Support is ongoing, not just at setup',
-  'Systems work together as one',
-  'Setup is handled properly by experts',
-  'You focus on customers, we handle systems',
-  'Built specifically for Kenyan businesses',
+  'Affordable POS system pricing with no hidden fees',
+  'Best POS software for small business in Kenya',
+  'M-Pesa integration and ETIMS compliance included',
+  'Cloud POS system with offline support',
+  'Setup by experts, 24/7 ongoing support',
+  'POS system suppliers trusted across Nairobi & Kenya',
 ];
 
 export const WhyVeiraSection: React.FC = () => {
@@ -17,12 +17,12 @@ export const WhyVeiraSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left Content */}
           <div>
-            <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">Why Veira</span>
+            <span className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">Best POS System Kenya</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
-              Why businesses choose us
+              Why businesses buy POS from Veira
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
-              Many businesses have dealt with unfinished software work or unclear costs. A productised service is different. You get fixed features, clear pricing, and support that continues after setup.
+              Looking for an affordable POS system in Nairobi? Many businesses have dealt with unreliable POS machines and unclear costs. Veira offers the best cloud POS software Kenya with transparent pricing, M-Pesa integration, and ongoing support.
             </p>
 
             {/* Reasons List */}
@@ -45,26 +45,26 @@ export const WhyVeiraSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                 <div className="bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6 text-center">
                   <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 sm:mb-2">24/7</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">System Monitoring</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">POS Support</div>
                 </div>
                 <div className="bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6 text-center">
                   <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-1 sm:mb-2">99%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Uptime Guaranteed</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Uptime Kenya</div>
                 </div>
                 <div className="bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6 text-center">
                   <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-accent mb-1 sm:mb-2">1 Day</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Setup Time</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">POS Setup</div>
                 </div>
                 <div className="bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6 text-center">
                   <div className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-accent mb-1 sm:mb-2">100+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Businesses Served</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Kenya Businesses</div>
                 </div>
               </div>
 
               {/* Quote */}
               <div className="mt-5 sm:mt-6 lg:mt-8 bg-card border border-border rounded-lg p-4 sm:p-5 lg:p-6">
                 <p className="text-sm sm:text-base text-muted-foreground italic mb-3 sm:mb-4">
-                  "We finally know what is happening in our business. Stock numbers match. Sales are clear. Veira made it simple."
+                  "The best POS system for our retail shop in Nairobi. Stock numbers match, M-Pesa integration works perfectly, and the price was affordable. Highly recommend!"
                 </p>
                 <div className="flex items-center gap-2.5 sm:gap-3">
                   <div className="w-8 sm:w-10 h-8 sm:h-10 accent-gradient rounded-full flex items-center justify-center">

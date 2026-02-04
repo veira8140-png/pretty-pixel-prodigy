@@ -14,19 +14,20 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 md:pt-16 overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Full visibility with subtle overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+      {/* Lighter overlay for better image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30" />
+      
       {/* Floating Orb - decorative brand element */}
       <motion.div
-        className="absolute top-1/4 right-[10%] w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full opacity-20 pointer-events-none"
+        className="absolute top-1/4 right-[10%] w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full opacity-30 pointer-events-none"
         style={{
-          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%)',
           filter: 'blur(1px)',
         }}
         animate={{
@@ -41,9 +42,9 @@ export const HeroSection: React.FC = () => {
       />
       
       <motion.div
-        className="absolute bottom-1/4 left-[5%] w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full opacity-15 pointer-events-none"
+        className="absolute bottom-1/4 left-[5%] w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full opacity-20 pointer-events-none"
         style={{
-          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%)',
           filter: 'blur(1px)',
         }}
         animate={{
@@ -63,18 +64,18 @@ export const HeroSection: React.FC = () => {
           {/* Badge - brand accent */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/20 rounded-full mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: '0.1s' }}>
             <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-xs sm:text-sm font-medium text-foreground">Built for Kenyan Businesses</span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">Best POS System in Kenya</span>
           </div>
 
           {/* Headline - Playfair Display (marketing-headline class) */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] sm:leading-tight mb-4 sm:mb-6 animate-fade-up px-2" style={{ animationDelay: '0.2s' }}>
-            Business systems that keep your business{' '}
-            <span className="text-accent">running</span>
+            Affordable POS System for{' '}
+            <span className="text-accent">Kenyan Businesses</span>
           </h1>
 
-          {/* Subheadline - DM Sans body text */}
+          {/* Subheadline - DM Sans body text with keywords */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 animate-fade-up px-4 sm:px-0" style={{ animationDelay: '0.3s' }}>
-            Running a business is hard work. Your systems should make it easier. We help Kenyan businesses manage sales, stock, customers, and daily operations using tools that actually work.
+            Buy the best cloud POS system in Kenya with M-Pesa integration, inventory management, and ETIMS compliance. Perfect for retail shops, restaurants, and supermarkets in Nairobi and across Kenya.
           </p>
 
           {/* CTAs - brand styling */}
@@ -82,9 +83,9 @@ export const HeroSection: React.FC = () => {
             <Button 
               onClick={scrollToContact}
               size="lg" 
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group"
+              className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group"
             >
-              Get Started
+              Get Free POS
               <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -98,14 +99,14 @@ export const HeroSection: React.FC = () => {
             </Button>
           </div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators with keywords */}
           <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-border animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">Trusted by businesses across Kenya</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 opacity-60">
-              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Retail</div>
-              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Restaurants</div>
-              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Pharmacies</div>
-              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Services</div>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">Trusted POS solution for businesses across Kenya</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 opacity-70">
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Retail POS</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Restaurant POS</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Pharmacy POS</div>
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">Supermarket POS</div>
             </div>
           </div>
         </div>
