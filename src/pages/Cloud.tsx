@@ -70,7 +70,7 @@ const CloudPage: React.FC<CloudPageProps> = ({ variant }) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254755792377"
               className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100 transition-all text-xs sm:text-sm uppercase tracking-widest"
             >
               Talk to Us
@@ -176,7 +176,7 @@ const CloudPage: React.FC<CloudPageProps> = ({ variant }) => {
             Get your POS and cloud system set up. We handle everything.
           </p>
           <a
-            href="https://wa.me/254700000000"
+            href="https://wa.me/254755792377"
             className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-100 transition-all text-xs sm:text-sm uppercase tracking-widest"
           >
             Ask on WhatsApp
