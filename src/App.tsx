@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import VeiraHome from "./pages/VeiraHome";
 import POSPage from "./pages/POS";
 import POSCity from "./pages/POSCity";
 import POSBusiness from "./pages/POSBusiness";
@@ -31,7 +31,7 @@ const App = () => (
     <Sonner />
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<VeiraHome />} />
         
         {/* ============= AUTHORITY HUB PAGES ============= */}
         <Route path="/pos-system" element={<POSSystemHub />} />

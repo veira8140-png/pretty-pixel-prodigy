@@ -131,18 +131,6 @@ export const FloatingChatbot: React.FC = () => {
                 isProcessing={isProcessing}
                 onClick={handleOrbClick}
               />
-              
-              {/* Tooltip */}
-              <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 2 }}
-                className="absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap"
-              >
-                <div className="bg-card border border-border px-3 py-1.5 rounded-lg shadow-lg">
-                  <p className="text-xs text-foreground font-medium">Need help? Ask me!</p>
-                </div>
-              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

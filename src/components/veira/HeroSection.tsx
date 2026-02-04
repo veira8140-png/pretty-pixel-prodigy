@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import heroBg from '@/assets/hero-bg.jpg';
 
 export const HeroSection: React.FC = () => {
   const scrollToContact = () => {
@@ -13,11 +14,14 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 md:pt-16 overflow-hidden">
-      {/* Background Pattern - using brand accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-accent/5" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--accent)/0.08)_0%,transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.06)_0%,transparent_50%)]" />
-      
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       {/* Floating Orb - decorative brand element */}
       <motion.div
         className="absolute top-1/4 right-[10%] w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full opacity-20 pointer-events-none"

@@ -63,7 +63,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs sm:text-sm text-muted-foreground">Email us</div>
-                  <div className="font-medium text-foreground text-sm sm:text-base">hello@veira.co.ke</div>
+                  <div className="font-medium text-foreground text-sm sm:text-base">hello@veirahq.com</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 sm:gap-4">
