@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 import heroBg from '@/assets/hero-bg.jpg';
 
 export const HeroSection: React.FC = () => {
@@ -14,50 +13,14 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-20 md:pt-16 overflow-hidden">
-      {/* Background Image - Full visibility with subtle overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+      {/* Background Image */}
+      <img 
+        src={heroBg}
+        alt="POS System Kenya - Point of Sale Background"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Lighter overlay for better image visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30" />
-      
-      {/* Floating Orb - decorative brand element */}
-      <motion.div
-        className="absolute top-1/4 right-[10%] w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full opacity-30 pointer-events-none"
-        style={{
-          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%)',
-          filter: 'blur(1px)',
-        }}
-        animate={{
-          y: [0, -15, 0],
-          scale: [1, 1.05, 1],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-1/4 left-[5%] w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full opacity-20 pointer-events-none"
-        style={{
-          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%)',
-          filter: 'blur(1px)',
-        }}
-        animate={{
-          y: [0, 10, 0],
-          scale: [1, 0.95, 1],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 1,
-        }}
-      />
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-background/30" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center max-w-4xl mx-auto">
