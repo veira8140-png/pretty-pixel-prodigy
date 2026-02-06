@@ -1,5 +1,5 @@
 # Veira Kenya - SEO Optimized Robots.txt
-# https://veira.co.ke
+# https://veirahq.com
 
 User-agent: Googlebot
 Allow: /
@@ -27,4 +27,4 @@ Disallow: /*preview*
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://veira.co.ke/sitemap.xml
+Sitemap: https://veirahq.com/sitemap.xml
