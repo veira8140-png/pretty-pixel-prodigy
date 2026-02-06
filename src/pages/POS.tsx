@@ -21,46 +21,57 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
   const displayCity = format(city, "Kenya");
   const displayIndustry = format(industry, "");
 
+  // SEO-optimized page content following 2026 checklist
+  // - Primary keyword at START of title
+  // - Under 60 characters for title
+  // - Meta description 155-160 chars with CTA
+  // - Clear modifier included
   const getPageContent = () => {
     if (variant === 'pricing') {
       return {
-        title: "POS System Pricing Kenya | Free Installation Nairobi",
-        description: "Transparent POS pricing for Kenyan businesses. No upfront software cost, 1.5% success fee only. Free installation in Nairobi. Get eTIMS compliant POS today.",
-        h1: "POS pricing that makes sense"
+        title: "POS System Price Kenya 2026: Free Setup (No Monthly Fee)",
+        description: "POS system pricing in Kenya from KES 3,500 deposit only. No monthly fees, free installation in Nairobi. Get your ETIMS compliant POS today.",
+        h1: "POS System Price Kenya: Transparent Pricing 2026",
+        keywords: "POS system price Kenya, how much does POS cost Kenya, affordable POS Kenya, cheap POS system Kenya"
       };
     }
     if (variant === 'free') {
       return {
-        title: "Free POS System Kenya | No Upfront Cost Nairobi",
-        description: "Get a free POS system in Kenya with no monthly fees. Veira POS is eTIMS compliant with free installation in Nairobi. Pay only when you sell.",
-        h1: "Free POS for your business"
+        title: "Free POS System Kenya 2026: No Monthly Fees (KRA Approved)",
+        description: "Get a free POS system in Kenya with ETIMS compliance. No upfront cost, no monthly fees. Free hardware and installation in Nairobi. Start selling today.",
+        h1: "Free POS System Kenya: Zero Monthly Fees",
+        keywords: "free POS system Kenya, POS system no monthly fee Kenya, free point of sale Kenya"
       };
     }
     if (variant === 'compliance') {
       return {
-        title: "eTIMS Compliant POS Kenya | KRA Approved System Nairobi",
-        description: "Stay KRA compliant with Veira's eTIMS integrated POS. Automatic tax recording for every sale. Free installation in Nairobi and across Kenya.",
-        h1: "eTIMS compliant POS"
+        title: "ETIMS Compliant POS Kenya 2026: KRA Approved System",
+        description: "Get ETIMS compliant POS in Kenya. Automatic KRA tax invoices for every sale. Avoid penalties up to KES 1M. Free setup in Nairobi and Kenya.",
+        h1: "ETIMS Compliant POS System: KRA Approved 2026",
+        keywords: "ETIMS compliant POS Kenya, KRA approved POS system, ETIMS POS integration Kenya"
       };
     }
     if (industry) {
       return {
-        title: `POS for ${displayIndustry} Kenya | ${displayIndustry} Point of Sale`,
-        description: `Get the best POS system for ${displayIndustry.toLowerCase()} businesses in Kenya. eTIMS compliant with features built for ${displayIndustry.toLowerCase()} operations.`,
-        h1: `POS for ${displayIndustry}`
+        title: `${displayIndustry} POS System Kenya 2026: Best Point of Sale`,
+        description: `Best POS system for ${displayIndustry.toLowerCase()} in Kenya with ETIMS compliance. M-Pesa integration, inventory tracking. Free installation.`,
+        h1: `Best POS System for ${displayIndustry} in Kenya`,
+        keywords: `${displayIndustry.toLowerCase()} POS system Kenya, best POS for ${displayIndustry.toLowerCase()} Kenya`
       };
     }
     if (city) {
       return {
-        title: `POS System ${displayCity} | Point of Sale Installation`,
-        description: `Get POS system installation in ${displayCity}. eTIMS compliant POS with local support. Free installation and training for your business.`,
-        h1: `POS in ${displayCity}`
+        title: `POS System ${displayCity} 2026: Free ETIMS Installation`,
+        description: `Buy POS system in ${displayCity} with free installation and training. ETIMS compliant, M-Pesa integrated. Same-day setup available.`,
+        h1: `Best POS System in ${displayCity}: Free Installation`,
+        keywords: `POS system ${displayCity}, buy POS ${displayCity}, point of sale ${displayCity}`
       };
     }
     return {
-      title: "Free ETIMS Compliant POS System for Kenya",
-      description: "Get a free ETIMS compliant POS system in Kenya. Veira helps restaurants and retail stores process payments, send ETIMS receipts, and track sales in real time.",
-      h1: "Free ETIMS Compliant POS System in Kenya"
+      title: "Buy POS System Kenya 2026: Free ETIMS Compliant (No Fees)",
+      description: "Buy the best POS system in Kenya with M-Pesa integration and ETIMS compliance. Free hardware, free installation. Trusted by 500+ businesses.",
+      h1: "Buy POS System Kenya: Free ETIMS Compliant 2026",
+      keywords: "buy POS system Kenya, best POS software Kenya, free POS system Kenya, ETIMS compliant POS"
     };
   };
 
@@ -95,11 +106,13 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
   ];
 
   return (
-    <div className="bg-zinc-50">
+    <div className="bg-secondary">
       <SEOHead 
         title={content.title}
         description={content.description}
+        keywords={content.keywords}
         faqs={faqs}
+        dateModified="2026-02-06"
       />
 
       {/* Hero */}
@@ -197,17 +210,19 @@ const POSPage: React.FC<POSPageProps> = ({ variant }) => {
         </div>
       </section>
 
-      {/* Internal Links */}
-      <section className="py-10 sm:py-12 bg-white border-y border-zinc-100">
+      {/* Internal Links - SEO optimized with keyword-rich anchor text */}
+      <section className="py-10 sm:py-12 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] mb-4 sm:mb-6">Related Pages</h3>
+          <h3 className="text-[9px] sm:text-[10px] font-bold text-muted-foreground uppercase tracking-[0.3em] mb-4 sm:mb-6">POS Solutions by Category</h3>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            <Link to="/etims" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">KRA ETIMS POS</Link>
-            <Link to="/pos/etims" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">eTIMS Compliant POS</Link>
-            <Link to="/pos/pricing" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">POS Pricing</Link>
-            <Link to="/pos/for/retail" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">Retail POS</Link>
-            <Link to="/agents" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">AI Agents</Link>
-            <Link to="/cloud" className="text-xs sm:text-sm text-zinc-600 hover:text-zinc-900 bg-zinc-100 px-3 py-1.5 rounded-full transition-colors">Cloud</Link>
+            <Link to="/etims-pos" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">ETIMS Compliant POS Kenya</Link>
+            <Link to="/pos/pricing" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">POS System Price Kenya</Link>
+            <Link to="/pos/for-restaurant" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">Restaurant POS Kenya</Link>
+            <Link to="/pos/for-shop" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">Retail Shop POS Kenya</Link>
+            <Link to="/pos/for-supermarket" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">Supermarket POS Kenya</Link>
+            <Link to="/pos/nairobi" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">POS System Nairobi</Link>
+            <Link to="/daily-sales-reports" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">Daily Sales Reports</Link>
+            <Link to="/staff-theft-prevention" className="text-xs sm:text-sm text-foreground/70 hover:text-foreground bg-secondary px-3 py-1.5 rounded-full transition-colors">Staff Theft Prevention</Link>
           </div>
         </div>
       </section>

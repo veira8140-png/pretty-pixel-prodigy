@@ -15,22 +15,27 @@ const POSSystemHub = () => {
 
   return (
     <AuthorityHubTemplate
-      title="POS System Kenya – Free ETIMS Compliant Point of Sale"
-      metaDescription="Get a free ETIMS compliant POS system in Kenya. No upfront cost, no monthly fees. Free hardware, delivery, and setup. Track sales, manage inventory, accept M-Pesa."
+      // Title: keyword first, under 60 chars, modifier included, year for freshness
+      title="Buy POS System Kenya 2026: Free ETIMS Compliant Point of Sale"
+      // Meta description: keyword in first sentence, 155-160 chars, CTA at end
+      metaDescription="Buy the best POS system in Kenya with M-Pesa integration and ETIMS compliance. Free hardware, free installation. Trusted by 500+ businesses. Get started today."
       keywords={[
-        'pos system kenya',
-        'free pos kenya',
-        'etims pos system',
-        'point of sale kenya',
-        'mpesa pos integration',
-        'restaurant pos kenya',
-        'retail pos kenya',
-        'pos software kenya',
+        'buy pos system kenya',
+        'pos system price kenya',
+        'best pos software kenya 2026',
+        'free pos system kenya',
+        'etims compliant pos kenya',
+        'pos with mpesa integration',
+        'restaurant pos system kenya',
+        'retail pos system kenya',
+        'cloud pos system kenya',
+        'pos system for small business kenya',
       ]}
       canonicalUrl="https://veirahq.com/pos-system"
-      h1="Free POS System for Kenyan Businesses"
-      heroSubtitle="ETIMS compliant, M-Pesa integrated, zero monthly fees. Join 500+ businesses across Kenya."
-      directAnswer="Veira POS is a free point of sale system designed specifically for Kenyan businesses. You get free hardware worth KES 15,000, free delivery anywhere in Kenya, free setup and training, plus 15GB Safaricom data. The only cost is a refundable KES 3,500 deposit. Every sale automatically generates ETIMS-compliant receipts sent directly to KRA. Accept M-Pesa, Till Number, and card payments. Get daily sales reports on WhatsApp."
+      // H1: primary keyword + clear value, matches search intent
+      h1="Buy POS System Kenya: Free ETIMS Compliant 2026"
+      heroSubtitle="Zero monthly fees, M-Pesa integrated, KRA approved. Join 500+ businesses across Kenya using Veira POS."
+      directAnswer="Veira POS is the best free point of sale system in Kenya for 2026. You get free hardware worth KES 15,000, free delivery anywhere in Kenya, free setup and training, plus 15GB Safaricom data. The only cost is a refundable KES 3,500 deposit. Every sale automatically generates ETIMS-compliant receipts sent directly to KRA. Accept M-Pesa, Till Number, and card payments. Get daily sales reports on WhatsApp. Over 500 retail shops, restaurants, and supermarkets trust Veira."
       breadcrumbs={[
         { label: 'Home', href: '/' },
         { label: 'POS System' },
