@@ -98,21 +98,23 @@ export const FAQSection: React.FC = () => {
             ))}
           </Accordion>
 
-          {/* Internal linking for SEO */}
+          {/* Internal linking for SEO - keyword-rich anchor text */}
           <div className="mt-10 sm:mt-12 pt-8 border-t border-border">
             <p className="text-sm text-muted-foreground text-center mb-4">
-              Learn more about our POS solutions:
+              Explore POS solutions by business type and location:
             </p>
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-              <a href="/pos" className="text-sm text-accent hover:underline">POS System Kenya</a>
+              <a href="/pos" className="text-sm text-accent hover:underline">Buy POS System Kenya</a>
               <span className="text-muted-foreground">•</span>
-              <a href="/pos/nairobi" className="text-sm text-accent hover:underline">POS Nairobi</a>
+              <a href="/pos/nairobi" className="text-sm text-accent hover:underline">POS System Nairobi</a>
               <span className="text-muted-foreground">•</span>
-              <a href="/pos/for-restaurants" className="text-sm text-accent hover:underline">Restaurant POS</a>
+              <a href="/pos/for-restaurant" className="text-sm text-accent hover:underline">Restaurant POS Kenya</a>
               <span className="text-muted-foreground">•</span>
-              <a href="/pos/for-retail" className="text-sm text-accent hover:underline">Retail POS</a>
+              <a href="/pos/for-shop" className="text-sm text-accent hover:underline">Retail POS Kenya</a>
               <span className="text-muted-foreground">•</span>
-              <a href="/etims-pos" className="text-sm text-accent hover:underline">ETIMS POS</a>
+              <a href="/etims-pos" className="text-sm text-accent hover:underline">ETIMS Compliant POS</a>
+              <span className="text-muted-foreground">•</span>
+              <a href="/pos/pricing" className="text-sm text-accent hover:underline">POS System Price Kenya</a>
             </div>
           </div>
         </div>

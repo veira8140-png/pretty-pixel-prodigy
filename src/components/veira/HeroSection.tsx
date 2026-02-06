@@ -30,15 +30,15 @@ export const HeroSection: React.FC = () => {
             <span className="text-xs sm:text-sm font-medium text-foreground">Best POS System in Kenya</span>
           </div>
 
-          {/* Headline - Playfair Display (marketing-headline class) */}
+          {/* H1 - Primary keyword at start, clear value proposition */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] sm:leading-tight mb-4 sm:mb-6 animate-fade-up px-2" style={{ animationDelay: '0.2s' }}>
-            Affordable POS System for{' '}
-            <span className="text-accent">Kenyan Businesses</span>
+            Best POS System Kenya 2026:{' '}
+            <span className="text-accent">Free ETIMS Compliant</span>
           </h1>
 
-          {/* Subheadline - DM Sans body text with keywords */}
+          {/* Subheadline - Primary keyword in first sentence, clear benefit, pain point addressed */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 animate-fade-up px-4 sm:px-0" style={{ animationDelay: '0.3s' }}>
-            Buy the best cloud POS system in Kenya with M-Pesa integration, inventory management, and ETIMS compliance. Perfect for retail shops, restaurants, and supermarkets in Nairobi and across Kenya.
+            Buy the best cloud POS system in Kenya with free M-Pesa integration and KRA ETIMS compliance. No monthly fees. Perfect for retail shops, restaurants, and supermarkets across Nairobi and Kenya.
           </p>
 
           {/* CTAs - brand styling */}
