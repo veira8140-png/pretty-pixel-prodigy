@@ -8,7 +8,7 @@ export const PremiumFooter: React.FC = () => {
   const productLinks = [
     { label: 'POS Terminal', href: '/pos' },
     { label: 'AI Agents', href: '/agents' },
-    { label: 'Cloud', href: '/cloud' },
+    { label: 'Cloud', href: '/cloud/hosting' },
     { label: 'Websites & Apps', href: '/websites' },
   ];
 
@@ -21,14 +21,16 @@ export const PremiumFooter: React.FC = () => {
 
   const companyLinks = [
     { label: 'Our Story', href: '/our-story' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
     { label: 'Contact', href: 'https://wa.me/254755792377', external: true },
   ];
 
   const industryLinks = [
-    { label: 'Restaurants', href: '/pos/for/restaurants' },
-    { label: 'Retail', href: '/pos/for/retail' },
-    { label: 'Pharmacy', href: '/pos/for/pharmacy' },
-    { label: 'Hardware', href: '/pos/for/hardware' },
+    { label: 'Restaurants', href: '/pos/for-restaurants' },
+    { label: 'Retail', href: '/pos/for-retail' },
+    { label: 'Pharmacy', href: '/pos/for-pharmacy' },
+    { label: 'Hardware', href: '/pos/for-hardware' },
   ];
 
   return (

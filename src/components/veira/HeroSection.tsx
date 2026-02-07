@@ -20,7 +20,7 @@ export const HeroSection: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/50 to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-transparent" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center max-w-4xl mx-auto">
@@ -32,13 +32,12 @@ export const HeroSection: React.FC = () => {
 
           {/* H1 - Primary keyword at start, clear value proposition */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] sm:leading-tight mb-4 sm:mb-6 animate-fade-up px-2" style={{ animationDelay: '0.2s' }}>
-            Best POS System Kenya 2026:{' '}
-            <span className="text-accent">Free ETIMS Compliant</span>
+            Best POS System in Kenya 2026
           </h1>
 
-          {/* Subheadline - Primary keyword in first sentence, clear benefit, pain point addressed */}
+          {/* Subheadline - Clear benefit, pain point addressed */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 animate-fade-up px-4 sm:px-0" style={{ animationDelay: '0.3s' }}>
-            Buy the best cloud POS system in Kenya with free M-Pesa integration and KRA ETIMS compliance. No monthly fees. Perfect for retail shops, restaurants, and supermarkets across Nairobi and Kenya.
+            See every sale, stock level and profit in real time even when you are not in the shop. Free M-Pesa integration with full KRA eTIMS compliance. No monthly fees.
           </p>
 
           {/* CTAs - brand styling */}
@@ -48,14 +47,14 @@ export const HeroSection: React.FC = () => {
               size="lg" 
               className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group"
             >
-              Get Free POS
+              Get Free POS Setup
               <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold group border-border hover:border-accent hover:bg-accent/5"
-              onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.querySelector('#how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Play className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
               See How It Works
