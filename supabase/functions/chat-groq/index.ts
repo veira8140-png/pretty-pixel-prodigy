@@ -3,10 +3,52 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const groqApiKey = Deno.env.get('GROQ_API_KEY');
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+// Restrict CORS to allowed origins only
+const allowedOrigins = [
+  'https://veirahq.com',
+  'https://www.veirahq.com',
+  'https://pretty-pixel-prodigy.lovable.app',
+  'http://localhost:5173',
+  'http://localhost:8080',
+];
+
+function isAllowedOrigin(origin: string | null): boolean {
+  if (!origin) return false;
+  return allowedOrigins.some(allowed => origin === allowed) || 
+         origin.includes('lovable.app');
+}
+
+function getCorsHeaders(origin: string | null) {
+  const allowedOrigin = isAllowedOrigin(origin) ? origin : allowedOrigins[0];
+  
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin!,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  };
+}
+
+// Simple in-memory rate limiting by origin+IP (resets on function cold start)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT = 30; // requests per minute per identifier
+const RATE_WINDOW = 60 * 1000; // 1 minute in ms
+
+function checkRateLimit(identifier: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(identifier);
+  
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(identifier, { count: 1, resetTime: now + RATE_WINDOW });
+    return true;
+  }
+  
+  if (record.count >= RATE_LIMIT) {
+    return false;
+  }
+  
+  record.count++;
+  return true;
+}
 
 const systemPrompt = `You are Veira's AI assistant, a friendly and knowledgeable representative for Veira, a productized service company in Kenya. 
 
@@ -30,19 +72,72 @@ Your personality:
 Always be ready to help with questions about our services, pricing, eTIMS compliance, or anything else about Veira.`;
 
 serve(async (req) => {
+  const origin = req.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Only allow POST requests
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Strict origin check - reject requests from disallowed origins
+  if (!isAllowedOrigin(origin)) {
+    console.warn('Rejected request from disallowed origin:', origin);
+    return new Response(JSON.stringify({ error: 'Forbidden' }), {
+      status: 403,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
+    // Get client identifier for rate limiting (use forwarded IP or origin)
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('x-real-ip') || 
+                     origin || 
+                     'unknown';
+    
+    // Rate limiting
+    if (!checkRateLimit(clientIP)) {
+      return new Response(JSON.stringify({ error: 'Too many requests. Please wait a moment.' }), {
+        status: 429,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { message, conversationHistory = [] } = await req.json();
 
-    console.log('Received message:', message);
-    console.log('Conversation history length:', conversationHistory.length);
+    // Input validation
+    if (!message || typeof message !== 'string') {
+      return new Response(JSON.stringify({ error: 'Message is required' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    if (message.length > 1000) {
+      return new Response(JSON.stringify({ error: 'Message too long (max 1000 characters)' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    // Limit conversation history to prevent abuse
+    const limitedHistory = Array.isArray(conversationHistory) 
+      ? conversationHistory.slice(-10) 
+      : [];
+
+    console.log('Client:', clientIP, 'Message length:', message.length);
 
     const messages = [
       { role: 'system', content: systemPrompt },
-      ...conversationHistory,
+      ...limitedHistory,
       { role: 'user', content: message }
     ];
 
@@ -68,8 +163,6 @@ serve(async (req) => {
 
     const data = await response.json();
     const reply = data.choices[0].message.content;
-
-    console.log('Generated reply:', reply);
 
     return new Response(JSON.stringify({ reply }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
