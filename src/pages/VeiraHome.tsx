@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEOHead } from '@/components/SEOHead';
-import { VeiraNavbar } from '@/components/veira/VeiraNavbar';
 import { HeroSection } from '@/components/veira/HeroSection';
 import { ServicesSection } from '@/components/veira/ServicesSection';
 import { HowItWorksSection } from '@/components/veira/HowItWorksSection';
@@ -8,7 +7,6 @@ import { WhoWeServeSection } from '@/components/veira/WhoWeServeSection';
 import { WhyVeiraSection } from '@/components/veira/WhyVeiraSection';
 import { FAQSection } from '@/components/veira/FAQSection';
 import { ContactSection } from '@/components/veira/ContactSection';
-import { FooterSection } from '@/components/veira/FooterSection';
 
 // Homepage FAQs for featured snippets
 const homepageFaqs = [
@@ -35,8 +33,8 @@ const VeiraHome: React.FC = () => {
     <div className="min-h-screen bg-background">
       {/* SEO Optimized for 2026 Checklist */}
       <SEOHead 
-        title="Buy POS System Kenya 2026: Free ETIMS Compliant Point of Sale"
-        description="Get the best POS system in Kenya with M-Pesa integration and ETIMS compliance. Free hardware, free installation in Nairobi. Trusted by 500+ retail shops and restaurants."
+        title="Best POS System in Kenya 2026: Free ETIMS Compliant"
+        description="Get the best POS system in Kenya with M-Pesa integration and ETIMS compliance. See every sale, stock level and profit in real time. No monthly fees."
         keywords="buy POS system Kenya, POS system price Kenya 2026, best POS software Kenya, free POS system Kenya, ETIMS compliant POS Kenya, restaurant POS system Kenya, retail POS system Kenya, cloud POS Kenya, POS with M-Pesa integration"
         canonicalUrl="https://www.veirahq.com/"
         faqs={homepageFaqs}
@@ -49,7 +47,6 @@ const VeiraHome: React.FC = () => {
         dateModified="2026-02-06"
       />
 
-      <VeiraNavbar />
       <main>
         <HeroSection />
         <ServicesSection />
@@ -59,7 +56,6 @@ const VeiraHome: React.FC = () => {
         <FAQSection />
         <ContactSection />
       </main>
-      <FooterSection />
     </div>
   );
 };
